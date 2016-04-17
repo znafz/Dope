@@ -1,0 +1,6 @@
+framework module Pods_Dope {
+  umbrella header "Pods-Dope-umbrella.h"
+
+  export *
+  module * { export * }
+}
