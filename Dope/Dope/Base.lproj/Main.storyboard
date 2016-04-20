@@ -108,7 +108,6 @@
         <!--Create Account View Controller-->
         <scene sceneID="ev0-r7-68g">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mcR-hH-9Ue" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="PtX-lE-NYU" customClass="CreateAccountViewController" customModule="Dope" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Zck-kx-bTR"/>
@@ -164,6 +163,7 @@
                         <outlet property="passwordField" destination="AGN-yv-P6L" id="Upp-y7-jQ5"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mcR-hH-9Ue" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="288" y="1006"/>
         </scene>
@@ -194,7 +194,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="KaY-GW-qrz" kind="relationship" relationship="viewControllers" id="QpE-xp-hVj"/>
+                        <segue destination="HIV-ge-DX0" kind="relationship" relationship="viewControllers" id="NCi-gD-Rm0"/>
                         <segue destination="dJi-eE-0Zz" kind="relationship" relationship="viewControllers" id="Bn5-eP-zcV"/>
                     </connections>
                 </tabBarController>
@@ -202,45 +202,75 @@
             </objects>
             <point key="canvasLocation" x="1715" y="262"/>
         </scene>
-        <!--Open Battles-->
-        <scene sceneID="VyS-7x-LW2">
+        <!--Would you rap that?-->
+        <scene sceneID="cne-Lm-JhF">
             <objects>
-                <tableViewController title="Open Battles" id="KaY-GW-qrz" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="X1x-Wp-NbJ">
+                <viewController storyboardIdentifier="wouldYouRapThat" title="Would you rap that?" id="HIV-ge-DX0" customClass="WouldYouRapThatVC" customModule="Dope" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Hm3-pk-6xK"/>
+                        <viewControllerLayoutGuide type="bottom" id="71o-F6-ciQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="OyH-TG-xNy">
+                        <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <tabBarItem key="tabBarItem" title="Item" id="fjz-oH-Yfx"/>
+                    <connections>
+                        <segue destination="0zq-Ng-lCf" kind="presentation" identifier="rapBattleLiveSegue" id="Y7v-38-qYe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cIr-T7-die" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2597" y="-67"/>
+        </scene>
+        <!--Rap Battle Live-->
+        <scene sceneID="V1e-oQ-Adp">
+            <objects>
+                <viewController storyboardIdentifier="rapBattleLive" title="Rap Battle Live" id="0zq-Ng-lCf" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="k73-y3-l6T"/>
+                        <viewControllerLayoutGuide type="bottom" id="JFe-Kn-R7Z"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="DxZ-pw-qPi">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Bz4-Iv-imY">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Bz4-Iv-imY" id="WrU-hv-Hra">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="KaY-GW-qrz" id="rAH-5D-53N"/>
-                            <outlet property="delegate" destination="KaY-GW-qrz" id="Y8o-PS-d8W"/>
-                        </connections>
-                    </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" id="qiS-sz-5ru"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="s7b-E5-JcT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZoV-Tk-zcp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2597" y="-78"/>
+            <point key="canvasLocation" x="3332" y="-67"/>
+        </scene>
+        <!--Rap Battle Viewer-->
+        <scene sceneID="Iep-qp-cfH">
+            <objects>
+                <viewController storyboardIdentifier="battleViewer" title="Rap Battle Viewer" id="Ocl-JG-7pt" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="XYm-j3-Wgo"/>
+                        <viewControllerLayoutGuide type="bottom" id="XsJ-QE-qZc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="u0O-Yv-5fd">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ylg-rx-00l" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3332" y="611"/>
         </scene>
         <!--Battles In Progress-->
         <scene sceneID="k6b-X1-jFz">
             <objects>
-                <tableViewController title="Battles In Progress" id="dJi-eE-0Zz" sceneMemberID="viewController">
+                <tableViewController title="Battles In Progress" id="dJi-eE-0Zz" customClass="BattlesTableVC" customModule="Dope" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="CGn-Ui-qNv">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="b5P-dp-mRV">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="battle" id="b5P-dp-mRV">
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="b5P-dp-mRV" id="alt-WT-pyI">
@@ -255,6 +285,10 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Item" id="QYi-DL-oEw"/>
+                    <navigationItem key="navigationItem" title="View a battle" id="TRV-JF-d7c"/>
+                    <connections>
+                        <segue destination="Ocl-JG-7pt" kind="presentation" identifier="battleViewerSegue" id="oST-m6-OcT"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xfd-RS-P0d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
