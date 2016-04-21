@@ -21,6 +21,17 @@ class FirebaseHelper{
         }
     }
     
+    func getUser(uid:String, completionHandler:(User)->(Void)){
+        let ref = self.usersRef.childByAppendingPath(uid)
+        ref.observeSingleEventOfType(.Value, withBlock: {
+            snapshot in
+            let image = snapshot.value.objectForKey("image_url") as! String
+            let dName = snapshot.value.objectForKey("display_name") as! String
+            
+            completionHandler(User(uid: uid, imageURL: image, displayName: dName))
+        })
+    }
+    
     func setOffline(){
         if let uid = CurrentUser.sharedInstance.uid{
             print("going offline")
@@ -44,7 +55,8 @@ class FirebaseHelper{
                         } else {
                             let uid = result["uid"] as? String
                             print("Successfully created user account with uid: \(uid)")
-                            let userInfo = ["display_name":displayName, "number_of_battles":0, "number_of_wins":0]
+                            let userInfo = ["display_name":displayName, "number_of_battles":0, "number_of_wins":0, "image_url":"http://www.gravatar.com/avatar/00000000000000000000000000000000"]
+                            
                             if let id = uid{
                                 self.usersRef.childByAppendingPath(id).setValue(userInfo)
                             }
@@ -69,11 +81,13 @@ class FirebaseHelper{
                                     let numBattles = snapshot.value.objectForKey("number_of_battles") as! Int
                                     let numWins = snapshot.value.objectForKey("number_of_wins") as! Int
                                     var pData = authData.providerData as! Dictionary<String,AnyObject>
+                                    self.usersRef.childByAppendingPath(authData.uid).childByAppendingPath("image_url").setValue(authData.providerData["profileImageURL"] as! String)
                                     CurrentUser.sharedInstance.login(authData.uid, email: pData["email"] as! String, token: authData.token, imageURL: pData["profileImageURL"] as! String, displayName: dName, numberOfBattles: numBattles, numberOfWins: numWins)
                                     print("logged in as \(CurrentUser.sharedInstance.email!)")
                                     //mark user as logged in and online
                                     self.usersRef.childByAppendingPath(authData.uid).childByAppendingPath("logged_in").setValue(true)
                                     self.setOnline()
+                                    
                                     completionHandler(true)
                                 })
                                 

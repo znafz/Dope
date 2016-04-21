@@ -30,6 +30,7 @@
 		9BA9275B1CC2B7AC0086D64E /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA9275A1CC2B7AC0086D64E /* CurrentUser.swift */; };
 		9BA9275D1CC2BD390086D64E /* FirebaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA9275C1CC2BD390086D64E /* FirebaseHelper.swift */; };
 		9BA9275F1CC2D1DE0086D64E /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA9275E1CC2D1DE0086D64E /* CreateAccountViewController.swift */; };
+		9BE79DB41CC94CB400059C03 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE79DB31CC94CB400059C03 /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,7 @@
 		9BA9275A1CC2B7AC0086D64E /* CurrentUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
 		9BA9275C1CC2BD390086D64E /* FirebaseHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseHelper.swift; sourceTree = "<group>"; };
 		9BA9275E1CC2D1DE0086D64E /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
+		9BE79DB31CC94CB400059C03 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D1088D197A217F4BD294EB83 /* Pods-Dope.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dope.release.xcconfig"; path = "Pods/Target Support Files/Pods-Dope/Pods-Dope.release.xcconfig"; sourceTree = "<group>"; };
 		D6CF9F9E159DE637364322C2 /* Pods-Dope.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dope.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Dope/Pods-Dope.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -145,6 +147,7 @@
 			children = (
 				3624CA6F1CC7DD5800D53288 /* Battle.swift */,
 				9BA9275A1CC2B7AC0086D64E /* CurrentUser.swift */,
+				9BE79DB31CC94CB400059C03 /* User.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -433,6 +436,7 @@
 				9B9644401CC2973C00D4B5D7 /* AppDelegate.swift in Sources */,
 				3624CA741CC7DD5800D53288 /* BattlesTableVC.swift in Sources */,
 				3624CA731CC7DD5800D53288 /* Battle.swift in Sources */,
+				9BE79DB41CC94CB400059C03 /* User.swift in Sources */,
 				3624CA751CC7DD5800D53288 /* WouldYouRapThatVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

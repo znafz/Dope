@@ -270,7 +270,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="battle" id="b5P-dp-mRV">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="battleCell" id="b5P-dp-mRV">
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="b5P-dp-mRV" id="alt-WT-pyI">
@@ -284,7 +284,7 @@
                             <outlet property="delegate" destination="dJi-eE-0Zz" id="fxa-5O-1dP"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" id="QYi-DL-oEw"/>
+                    <tabBarItem key="tabBarItem" title="Battles in Progress" id="QYi-DL-oEw"/>
                     <navigationItem key="navigationItem" title="View a battle" id="TRV-JF-d7c"/>
                     <connections>
                         <segue destination="Ocl-JG-7pt" kind="presentation" identifier="battleViewerSegue" id="oST-m6-OcT"/>
