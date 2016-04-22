@@ -43,6 +43,8 @@
 		9BA9275D1CC2BD390086D64E /* FirebaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA9275C1CC2BD390086D64E /* FirebaseHelper.swift */; };
 		9BA9275F1CC2D1DE0086D64E /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA9275E1CC2D1DE0086D64E /* CreateAccountViewController.swift */; };
 		9BE79DB41CC94CB400059C03 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE79DB31CC94CB400059C03 /* User.swift */; };
+		9BE79DB61CC9AA6600059C03 /* InitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE79DB51CC9AA6600059C03 /* InitViewController.swift */; };
+		9BE79DB81CC9AB4C00059C03 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE79DB71CC9AB4C00059C03 /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +111,8 @@
 		9BA9275C1CC2BD390086D64E /* FirebaseHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseHelper.swift; sourceTree = "<group>"; };
 		9BA9275E1CC2D1DE0086D64E /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		9BE79DB31CC94CB400059C03 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		9BE79DB51CC9AA6600059C03 /* InitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitViewController.swift; sourceTree = "<group>"; };
+		9BE79DB71CC9AB4C00059C03 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		D1088D197A217F4BD294EB83 /* Pods-Dope.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dope.release.xcconfig"; path = "Pods/Target Support Files/Pods-Dope/Pods-Dope.release.xcconfig"; sourceTree = "<group>"; };
 		D6CF9F9E159DE637364322C2 /* Pods-Dope.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dope.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Dope/Pods-Dope.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -163,6 +167,7 @@
 				3624CA721CC7DD5800D53288 /* WouldYouRapThatVC.swift */,
 				3624CA701CC7DD5800D53288 /* BattlesTableVC.swift */,
 				366F98F11CC93399001FC2D5 /* LiveBattleVC.swift */,
+				9BE79DB71CC9AB4C00059C03 /* HomeViewController.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -212,6 +217,7 @@
 			children = (
 				9BA9275E1CC2D1DE0086D64E /* CreateAccountViewController.swift */,
 				9BA927421CC299540086D64E /* LoginViewController.swift */,
+				9BE79DB51CC9AA6600059C03 /* InitViewController.swift */,
 			);
 			name = Account;
 			sourceTree = "<group>";
@@ -501,8 +507,10 @@
 			files = (
 				366F98FA1CC94CD8001FC2D5 /* DoubleSubscriber.swift in Sources */,
 				366F98F41CC93506001FC2D5 /* Subscribe.swift in Sources */,
+				9BE79DB61CC9AA6600059C03 /* InitViewController.swift in Sources */,
 				366F98F21CC93399001FC2D5 /* LiveBattleVC.swift in Sources */,
 				366F98F81CC94CC6001FC2D5 /* Publish.swift in Sources */,
+				9BE79DB81CC9AB4C00059C03 /* HomeViewController.swift in Sources */,
 				366F98AF1CC92BBE001FC2D5 /* BaseStream.swift in Sources */,
 				3624CAB91CC90BC200D53288 /* CustomKolodaView.swift in Sources */,
 				9BA9275F1CC2D1DE0086D64E /* CreateAccountViewController.swift in Sources */,
