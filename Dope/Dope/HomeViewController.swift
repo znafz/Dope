@@ -17,7 +17,7 @@ class HomeViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.navigationController?.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "08 Underground", size: 28)!,  NSForegroundColorAttributeName: UIColor.blackColor()]
         // Do any additional setup after loading the view.
     }
 

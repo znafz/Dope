@@ -28,6 +28,12 @@
 		366F98F81CC94CC6001FC2D5 /* Publish.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366F98F71CC94CC6001FC2D5 /* Publish.swift */; };
 		366F98FA1CC94CD8001FC2D5 /* DoubleSubscriber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366F98F91CC94CD8001FC2D5 /* DoubleSubscriber.swift */; };
 		712ED15FC6796F8903A0EF1C /* Pods_Dope.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68868F20CEB0A8646B2D2A97 /* Pods_Dope.framework */; };
+		9B4E144B1CC9B7300053D17F /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9B96444B1CC2973C00D4B5D7 /* Info.plist */; };
+		9B4E14521CC9B9450053D17F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B9644461CC2973C00D4B5D7 /* Assets.xcassets */; };
+		9B4E14531CC9B9450053D17F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B9644461CC2973C00D4B5D7 /* Assets.xcassets */; };
+		9B4E14561CC9B9DC0053D17F /* 08 Underground.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9B4E14541CC9B9D80053D17F /* 08 Underground.ttf */; };
+		9B4E14571CC9B9DD0053D17F /* 08 Underground.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9B4E14541CC9B9D80053D17F /* 08 Underground.ttf */; };
+		9B4E14581CC9BA890053D17F /* 08 Underground.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9B4E14541CC9B9D80053D17F /* 08 Underground.ttf */; };
 		9B9644401CC2973C00D4B5D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B96443F1CC2973C00D4B5D7 /* AppDelegate.swift */; };
 		9B9644451CC2973C00D4B5D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B9644431CC2973C00D4B5D7 /* Main.storyboard */; };
 		9B9644471CC2973C00D4B5D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B9644461CC2973C00D4B5D7 /* Assets.xcassets */; };
@@ -90,6 +96,7 @@
 		366F98F71CC94CC6001FC2D5 /* Publish.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Publish.swift; sourceTree = "<group>"; };
 		366F98F91CC94CD8001FC2D5 /* DoubleSubscriber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoubleSubscriber.swift; sourceTree = "<group>"; };
 		68868F20CEB0A8646B2D2A97 /* Pods_Dope.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dope.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B4E14541CC9B9D80053D17F /* 08 Underground.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "08 Underground.ttf"; sourceTree = "<group>"; };
 		9B96443C1CC2973C00D4B5D7 /* Dope.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dope.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B96443F1CC2973C00D4B5D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9B9644441CC2973C00D4B5D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -264,6 +271,7 @@
 		9B96443E1CC2973C00D4B5D7 /* Dope */ = {
 			isa = PBXGroup;
 			children = (
+				9B4E14541CC9B9D80053D17F /* 08 Underground.ttf */,
 				3624CAAF1CC8F8AF00D53288 /* Foodini.png */,
 				3624CAA81CC8062B00D53288 /* Dope.entitlements */,
 				3624CA7F1CC800EE00D53288 /* ALToastView.h */,
@@ -321,8 +329,8 @@
 				B7F73635B14D1BAB821681B9 /* Check Pods Manifest.lock */,
 				9B9644381CC2973C00D4B5D7 /* Sources */,
 				9B9644391CC2973C00D4B5D7 /* Frameworks */,
-				9B96443A1CC2973C00D4B5D7 /* Resources */,
 				2C60349CB0F94968CDF8565F /* Embed Pods Frameworks */,
+				9B96443A1CC2973C00D4B5D7 /* Resources */,
 				8A90DCC078BD56730DCC7332 /* Copy Pods Resources */,
 			);
 			buildRules = (
@@ -427,6 +435,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B4E14581CC9BA890053D17F /* 08 Underground.ttf in Resources */,
+				9B4E144B1CC9B7300053D17F /* Info.plist in Resources */,
 				9B96444A1CC2973C00D4B5D7 /* LaunchScreen.storyboard in Resources */,
 				9B9644471CC2973C00D4B5D7 /* Assets.xcassets in Resources */,
 				3624CAB21CC90B4B00D53288 /* OverlayView.xib in Resources */,
@@ -440,6 +450,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B4E14521CC9B9450053D17F /* Assets.xcassets in Resources */,
+				9B4E14561CC9B9DC0053D17F /* 08 Underground.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -447,6 +459,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B4E14531CC9B9450053D17F /* Assets.xcassets in Resources */,
+				9B4E14571CC9B9DD0053D17F /* 08 Underground.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
