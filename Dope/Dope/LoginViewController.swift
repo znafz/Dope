@@ -43,9 +43,17 @@ class LoginViewController: UIViewController{
         super.viewDidLoad()
         indicator.hidden = true
         invalidLabel.hidden = true
-        self.navigationController?.navigationBarHidden = true
 
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        self.navigationController!.navigationBar.hidden = true
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        self.navigationController!.navigationBar.hidden = false
+    }
+
     
     
 

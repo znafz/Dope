@@ -141,7 +141,6 @@
                             <constraint firstItem="SiS-ln-AwS" firstAttribute="top" secondItem="kHV-yY-xCY" secondAttribute="bottom" constant="8" symbolic="YES" id="sWa-eS-QGG"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="hg5-Sa-Kvq"/>
                     <connections>
                         <outlet property="emailField" destination="kHV-yY-xCY" id="FTI-VQ-gBE"/>
                         <outlet property="indicator" destination="V4g-SN-pgA" id="5Oz-2c-TX8"/>
