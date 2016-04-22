@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>GlobalProperties</key>
+	<dict>
+		<key>bitrate</key>
+		<integer>256</integer>
+		<key>host</key>
+		<string>10.22.102.182</string>
+		<key>buffer_time</key>
+		<integer>1</integer>
+		<key>port</key>
+		<integer>8554</integer>
+		<key>stream1</key>
+		<string>stream1</string>
+		<key>stream2</key>
+		<string>stream2</string>
+		<key>context</key>
+		<string>live</string>
+		<key>camera_width</key>
+		<integer>320</integer>
+		<key>camera_height</key>
+		<string>240</string>
+		<key>debug_view</key>
+		<true/>
+		<key>video_on</key>
+		<true/>
+		<key>audio_on</key>
+		<true/>
+	</dict>
+	<key>Tests</key>
+	<dict>
+		<key>publish</key>
+		<dict>
+			<key>LocalProperties</key>
+			<dict>
+				<key>bitrate</key>
+				<integer>256</integer>
+			</dict>
+			<key>name</key>
+			<string>Publish</string>
+			<key>class</key>
+			<string>Publish</string>
+		</dict>
+		<key>publish - 1200</key>
+		<dict>
+			<key>description</key>
+			<string>A high bitrate publisher</string>
+			<key>LocalProperties</key>
+			<dict>
+				<key>bitrate</key>
+				<integer>1200</integer>
+			</dict>
+			<key>name</key>
+			<string>Publish - 1200</string>
+			<key>class</key>
+			<string>Publish</string>
+		</dict>
+		<key>publish - ABR</key>
+		<dict>
+			<key>description</key>
+			<string>A high bitrate publisher with AdaptiveBitrateController</string>
+			<key>LocalProperties</key>
+			<dict>
+				<key>bitrate</key>
+				<integer>4800</integer>
+			</dict>
+			<key>name</key>
+			<string>Publish - ABR</string>
+			<key>class</key>
+			<string>AdaptiveBitrateControllerTest</string>
+		</dict>
+		<key>publish - Image Capture</key>
+		<dict>
+			<key>description</key>
+			<string>Touch the publish stream to take a screen shot that is displayed!</string>
+			<key>LocalProperties</key>
+			<dict>
+				<key>bitrate</key>
+				<integer>256</integer>
+			</dict>
+			<key>name</key>
+			<string>Publish - ImageCapture</string>
+			<key>class</key>
+			<string>PublishStreamImageTest</string>
+		</dict>
+		<key>publish - Camera Swap</key>
+		<dict>
+			<key>description</key>
+			<string>Touch the screen to swap which camera is being used! Verify using flash that camera is swapping properly and no rendering problems occur.</string>
+			<key>LocalProperties</key>
+			<dict>
+				<key>bitrate</key>
+				<integer>256</integer>
+			</dict>
+			<key>name</key>
+			<string>Publish - Camera Swap</string>
+			<key>class</key>
+			<string>CameraSwapTest</string>
+		</dict>
+		<key>publish - Record</key>
+		<dict>
+			<key>description</key>
+			<string>A publish example that records stream data on the server.</string>
+			<key>LocalProperties</key>
+			<dict>
+				<key>bitrate</key>
+				<integer>256</integer>
+			</dict>
+			<key>name</key>
+			<string>publish - Record</string>
+			<key>class</key>
+			<string>RecordedTest</string>
+		</dict>
+		<key>publish - Orientation</key>
+		<dict>
+			<key>description</key>
+			<string>Touch the screen to rotate the output video 90 degrees.  Verify with flash, android, or other iOS device running subscribe test.</string>
+			<key>LocalProperties</key>
+			<dict>
+				<key>bitrate</key>
+				<integer>256</integer>
+			</dict>
+			<key>name</key>
+			<string>Publish - Orientation Change</string>
+			<key>class</key>
+			<string>PublishOrientationTest</string>
+		</dict>
+		<key>TwoWay</key>
+		<dict>
+			<key>description</key>
+			<string>Publish and subscribe simultaneously to hold a conversation</string>
+			<key>LocalProperties</key>
+			<dict/>
+			<key>name</key>
+			<string>Two Way</string>
+			<key>class</key>
+			<string>TwoWayTest</string>
+		</dict>
+		<key>subscribe</key>
+		<dict>
+			<key>LocalProperties</key>
+			<dict>
+				<key>buffer_time</key>
+				<integer>1</integer>
+			</dict>
+			<key>name</key>
+			<string>Subscribe</string>
+			<key>class</key>
+			<string>Subscribe</string>
+		</dict>
+		<key>subscribe - Image Capture</key>
+		<dict>
+			<key>description</key>
+			<string>Touch the subscribe stream to take a screen shot that is displayed!</string>
+			<key>LocalProperties</key>
+			<dict>
+				<key>bitrate</key>
+				<integer>1200</integer>
+			</dict>
+			<key>name</key>
+			<string>Subscribe - ImageCapture</string>
+			<key>class</key>
+			<string>SubscribeStreamImageTest</string>
+		</dict>
+		<key>subscribe - BandwidthTest</key>
+		<dict>
+			<key>description</key>
+			<string>Detect Insufficient and Sufficient BW flags.  Test on a poor network using a publisher that has high video quality. Video should become sporadic or stop altogether.  The screen will darken when no video is being received.</string>
+			<key>LocalProperties</key>
+			<dict>
+				<key>buffer_time</key>
+				<integer>1</integer>
+			</dict>
+			<key>name</key>
+			<string>Subscribe Bandwidth Test</string>
+			<key>class</key>
+			<string>SubscriberBandwidthTest</string>
+		</dict>
+		<key>subscribe - Aspect Ratio</key>
+		<dict>
+			<key>description</key>
+			<string>Change the fill mode of the stream.  scale to fill, scale to fit, scale fill.  Aspect ratio should be maintained on first 2.</string>
+			<key>LocalProperties</key>
+			<dict>
+				<key>buffer_time</key>
+				<integer>1</integer>
+			</dict>
+			<key>name</key>
+			<string>Subscribe Aspect Ratio</string>
+			<key>class</key>
+			<string>SubscribeAspectRatioTest</string>
+		</dict>
+		<key>subscribe - Cluster</key>
+		<dict>
+			<key>description</key>
+			<string>An example of conecting to a cluster server.</string>
+			<key>LocalProperties</key>
+			<dict/>
+			<key>name</key>
+			<string>Subscribe Cluster</string>
+			<key>class</key>
+			<string>SubscribeCluster</string>
+		</dict>
+		<key>subscribe - Double Subscriber</key>
+		<dict>
+			<key>description</key>
+			<string>Allows subscribing to both streams at once</string>
+			<key>LocalProperties</key>
+			<dict/>
+			<key>name</key>
+			<string>Double Subscriber</string>
+			<key>class</key>
+			<string>DoubleSubscriber</string>
+		</dict>
+		<key>home</key>
+		<dict>
+			<key>class</key>
+			<string>Home</string>
+			<key>name</key>
+			<string>Home</string>
+		</dict>
+	</dict>
+</dict>
+</plist>

@@ -15,6 +15,18 @@
 		3624CAAA1CC807DA00D53288 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3624CAA91CC807DA00D53288 /* CoreFoundation.framework */; };
 		3624CAAC1CC807E900D53288 /* libiconv.2.4.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3624CAAB1CC807E900D53288 /* libiconv.2.4.0.tbd */; };
 		3624CAAE1CC807F900D53288 /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3624CAAD1CC807F900D53288 /* libstdc++.6.0.9.tbd */; };
+		3624CAB01CC8F8AF00D53288 /* Foodini.png in Resources */ = {isa = PBXBuildFile; fileRef = 3624CAAF1CC8F8AF00D53288 /* Foodini.png */; };
+		3624CAB21CC90B4B00D53288 /* OverlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3624CAB11CC90B4B00D53288 /* OverlayView.xib */; };
+		3624CAB81CC90BC200D53288 /* ExampleOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3624CAB51CC90BC200D53288 /* ExampleOverlayView.swift */; };
+		3624CAB91CC90BC200D53288 /* CustomKolodaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3624CAB61CC90BC200D53288 /* CustomKolodaView.swift */; };
+		3624CABA1CC90BC200D53288 /* CustomOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3624CAB71CC90BC200D53288 /* CustomOverlayView.swift */; };
+		366F98AF1CC92BBE001FC2D5 /* BaseStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366F98AE1CC92BBE001FC2D5 /* BaseStream.swift */; };
+		366F98ED1CC931B1001FC2D5 /* Stream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366F98EC1CC931B1001FC2D5 /* Stream.swift */; };
+		366F98F21CC93399001FC2D5 /* LiveBattleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366F98F11CC93399001FC2D5 /* LiveBattleVC.swift */; };
+		366F98F41CC93506001FC2D5 /* Subscribe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366F98F31CC93506001FC2D5 /* Subscribe.swift */; };
+		366F98F61CC94B73001FC2D5 /* tests.plist in Resources */ = {isa = PBXBuildFile; fileRef = 366F98F51CC94B73001FC2D5 /* tests.plist */; };
+		366F98F81CC94CC6001FC2D5 /* Publish.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366F98F71CC94CC6001FC2D5 /* Publish.swift */; };
+		366F98FA1CC94CD8001FC2D5 /* DoubleSubscriber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366F98F91CC94CD8001FC2D5 /* DoubleSubscriber.swift */; };
 		712ED15FC6796F8903A0EF1C /* Pods_Dope.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68868F20CEB0A8646B2D2A97 /* Pods_Dope.framework */; };
 		9B9644401CC2973C00D4B5D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B96443F1CC2973C00D4B5D7 /* AppDelegate.swift */; };
 		9B9644451CC2973C00D4B5D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B9644431CC2973C00D4B5D7 /* Main.storyboard */; };
@@ -63,6 +75,18 @@
 		3624CAA91CC807DA00D53288 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		3624CAAB1CC807E900D53288 /* libiconv.2.4.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.2.4.0.tbd; path = usr/lib/libiconv.2.4.0.tbd; sourceTree = SDKROOT; };
 		3624CAAD1CC807F900D53288 /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
+		3624CAAF1CC8F8AF00D53288 /* Foodini.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Foodini.png; sourceTree = "<group>"; };
+		3624CAB11CC90B4B00D53288 /* OverlayView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OverlayView.xib; sourceTree = "<group>"; };
+		3624CAB51CC90BC200D53288 /* ExampleOverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleOverlayView.swift; sourceTree = "<group>"; };
+		3624CAB61CC90BC200D53288 /* CustomKolodaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomKolodaView.swift; sourceTree = "<group>"; };
+		3624CAB71CC90BC200D53288 /* CustomOverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomOverlayView.swift; sourceTree = "<group>"; };
+		366F98AE1CC92BBE001FC2D5 /* BaseStream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseStream.swift; sourceTree = "<group>"; };
+		366F98EC1CC931B1001FC2D5 /* Stream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stream.swift; sourceTree = "<group>"; };
+		366F98F11CC93399001FC2D5 /* LiveBattleVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveBattleVC.swift; sourceTree = "<group>"; };
+		366F98F31CC93506001FC2D5 /* Subscribe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Subscribe.swift; sourceTree = "<group>"; };
+		366F98F51CC94B73001FC2D5 /* tests.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = tests.plist; sourceTree = "<group>"; };
+		366F98F71CC94CC6001FC2D5 /* Publish.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Publish.swift; sourceTree = "<group>"; };
+		366F98F91CC94CD8001FC2D5 /* DoubleSubscriber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoubleSubscriber.swift; sourceTree = "<group>"; };
 		68868F20CEB0A8646B2D2A97 /* Pods_Dope.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dope.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B96443C1CC2973C00D4B5D7 /* Dope.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dope.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B96443F1CC2973C00D4B5D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -127,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				9BA9275C1CC2BD390086D64E /* FirebaseHelper.swift */,
+				366F98EC1CC931B1001FC2D5 /* Stream.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -134,10 +159,10 @@
 		3624CA7B1CC7DD9300D53288 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				9BA9275E1CC2D1DE0086D64E /* CreateAccountViewController.swift */,
-				9BA927421CC299540086D64E /* LoginViewController.swift */,
+				366F98F01CC932EC001FC2D5 /* Account */,
 				3624CA721CC7DD5800D53288 /* WouldYouRapThatVC.swift */,
 				3624CA701CC7DD5800D53288 /* BattlesTableVC.swift */,
+				366F98F11CC93399001FC2D5 /* LiveBattleVC.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -150,6 +175,45 @@
 				9BE79DB31CC94CB400059C03 /* User.swift */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		3624CABB1CC90BC700D53288 /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				366F98EF1CC932D4001FC2D5 /* R5Steaming */,
+				366F98EE1CC932C9001FC2D5 /* Koloda */,
+			);
+			name = Subviews;
+			sourceTree = "<group>";
+		};
+		366F98EE1CC932C9001FC2D5 /* Koloda */ = {
+			isa = PBXGroup;
+			children = (
+				3624CAB51CC90BC200D53288 /* ExampleOverlayView.swift */,
+				3624CAB61CC90BC200D53288 /* CustomKolodaView.swift */,
+				3624CAB71CC90BC200D53288 /* CustomOverlayView.swift */,
+			);
+			name = Koloda;
+			sourceTree = "<group>";
+		};
+		366F98EF1CC932D4001FC2D5 /* R5Steaming */ = {
+			isa = PBXGroup;
+			children = (
+				366F98AE1CC92BBE001FC2D5 /* BaseStream.swift */,
+				366F98F31CC93506001FC2D5 /* Subscribe.swift */,
+				366F98F71CC94CC6001FC2D5 /* Publish.swift */,
+				366F98F91CC94CD8001FC2D5 /* DoubleSubscriber.swift */,
+			);
+			name = R5Steaming;
+			sourceTree = "<group>";
+		};
+		366F98F01CC932EC001FC2D5 /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				9BA9275E1CC2D1DE0086D64E /* CreateAccountViewController.swift */,
+				9BA927421CC299540086D64E /* LoginViewController.swift */,
+			);
+			name = Account;
 			sourceTree = "<group>";
 		};
 		7BF702B420160D36E38A635F /* Frameworks */ = {
@@ -194,17 +258,21 @@
 		9B96443E1CC2973C00D4B5D7 /* Dope */ = {
 			isa = PBXGroup;
 			children = (
+				3624CAAF1CC8F8AF00D53288 /* Foodini.png */,
 				3624CAA81CC8062B00D53288 /* Dope.entitlements */,
 				3624CA7F1CC800EE00D53288 /* ALToastView.h */,
 				3624CA801CC800EE00D53288 /* ALToastView.m */,
 				3624CA7C1CC7DD9800D53288 /* Models */,
 				3624CA7B1CC7DD9300D53288 /* Views */,
 				3624CA7A1CC7DD8D00D53288 /* Controllers */,
+				3624CABB1CC90BC700D53288 /* Subviews */,
 				9B96443F1CC2973C00D4B5D7 /* AppDelegate.swift */,
 				9B9644431CC2973C00D4B5D7 /* Main.storyboard */,
 				9B9644481CC2973C00D4B5D7 /* LaunchScreen.storyboard */,
+				3624CAB11CC90B4B00D53288 /* OverlayView.xib */,
 				9B9644461CC2973C00D4B5D7 /* Assets.xcassets */,
 				9B96444B1CC2973C00D4B5D7 /* Info.plist */,
+				366F98F51CC94B73001FC2D5 /* tests.plist */,
 				3624CA7E1CC800ED00D53288 /* Dope-Bridging-Header.h */,
 			);
 			path = Dope;
@@ -355,6 +423,9 @@
 			files = (
 				9B96444A1CC2973C00D4B5D7 /* LaunchScreen.storyboard in Resources */,
 				9B9644471CC2973C00D4B5D7 /* Assets.xcassets in Resources */,
+				3624CAB21CC90B4B00D53288 /* OverlayView.xib in Resources */,
+				3624CAB01CC8F8AF00D53288 /* Foodini.png in Resources */,
+				366F98F61CC94B73001FC2D5 /* tests.plist in Resources */,
 				9B9644451CC2973C00D4B5D7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -428,13 +499,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				366F98FA1CC94CD8001FC2D5 /* DoubleSubscriber.swift in Sources */,
+				366F98F41CC93506001FC2D5 /* Subscribe.swift in Sources */,
+				366F98F21CC93399001FC2D5 /* LiveBattleVC.swift in Sources */,
+				366F98F81CC94CC6001FC2D5 /* Publish.swift in Sources */,
+				366F98AF1CC92BBE001FC2D5 /* BaseStream.swift in Sources */,
+				3624CAB91CC90BC200D53288 /* CustomKolodaView.swift in Sources */,
 				9BA9275F1CC2D1DE0086D64E /* CreateAccountViewController.swift in Sources */,
+				3624CABA1CC90BC200D53288 /* CustomOverlayView.swift in Sources */,
 				3624CA811CC800EE00D53288 /* ALToastView.m in Sources */,
 				9BA9275D1CC2BD390086D64E /* FirebaseHelper.swift in Sources */,
 				9BA927431CC299540086D64E /* LoginViewController.swift in Sources */,
 				9BA9275B1CC2B7AC0086D64E /* CurrentUser.swift in Sources */,
 				9B9644401CC2973C00D4B5D7 /* AppDelegate.swift in Sources */,
+				3624CAB81CC90BC200D53288 /* ExampleOverlayView.swift in Sources */,
 				3624CA741CC7DD5800D53288 /* BattlesTableVC.swift in Sources */,
+				366F98ED1CC931B1001FC2D5 /* Stream.swift in Sources */,
 				3624CA731CC7DD5800D53288 /* Battle.swift in Sources */,
 				9BE79DB41CC94CB400059C03 /* User.swift in Sources */,
 				3624CA751CC7DD5800D53288 /* WouldYouRapThatVC.swift in Sources */,
