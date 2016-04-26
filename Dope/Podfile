@@ -9,6 +9,9 @@ target 'Dope' do
     pod 'pop', '~> 1.0'
     pod 'Koloda', '~> 3.0.0'
     pod 'FirebaseUI/Core', '~> 0.3'
+    pod 'FirebaseUI/Password', '~> 0.3.2'
+    pod 'FirebaseUI/Facebook', '~> 0.3.2'
+    pod 'FirebaseUI/Twitter', '~> 0.3.2'
 end
 
 post_install do |installer|

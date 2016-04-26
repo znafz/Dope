@@ -1,7 +1,30 @@
 PODS:
+  - Bolts (1.7.0):
+    - Bolts/AppLinks (= 1.7.0)
+    - Bolts/Tasks (= 1.7.0)
+  - Bolts/AppLinks (1.7.0):
+    - Bolts/Tasks
+  - Bolts/Tasks (1.7.0)
+  - FBSDKCoreKit (4.11.0):
+    - Bolts (~> 1.7)
+  - FBSDKLoginKit (4.11.0):
+    - FBSDKCoreKit
   - Firebase (2.5.1)
+  - FirebaseUI/AuthHelper (0.3.2):
+    - Firebase (~> 2.2)
   - FirebaseUI/Core (0.3.2):
     - Firebase (~> 2.2)
+  - FirebaseUI/Facebook (0.3.2):
+    - FBSDKCoreKit
+    - FBSDKLoginKit
+    - Firebase (~> 2.2)
+    - FirebaseUI/AuthHelper
+  - FirebaseUI/Password (0.3.2):
+    - Firebase (~> 2.2)
+    - FirebaseUI/AuthHelper
+  - FirebaseUI/Twitter (0.3.2):
+    - Firebase (~> 2.2)
+    - FirebaseUI/AuthHelper
   - Koloda (3.0.0):
     - pop (~> 1.0)
   - pop (1.0.9)
@@ -9,10 +32,16 @@ PODS:
 DEPENDENCIES:
   - Firebase (>= 2.5.1)
   - FirebaseUI/Core (~> 0.3)
+  - FirebaseUI/Facebook (~> 0.3.2)
+  - FirebaseUI/Password (~> 0.3.2)
+  - FirebaseUI/Twitter (~> 0.3.2)
   - Koloda (~> 3.0.0)
   - pop (~> 1.0)
 
 SPEC CHECKSUMS:
+  Bolts: a0058fa3b331c5a1e4402d534f2dae36dbff31e4
+  FBSDKCoreKit: 686ac982723a14ec9ddb85e2f81235d7706c891b
+  FBSDKLoginKit: bade9fc78277764149ccc5bfaadbf13c83175c6a
   Firebase: 3565ea88b830f28f2c77ecc524622bc71a20d085
   FirebaseUI: 95621dce04f0313495c86e1fba503254e0ec48b1
   Koloda: 315aa5d2ef4138df90c42ee77c18af0727528e6a

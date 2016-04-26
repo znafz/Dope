@@ -35,9 +35,6 @@
 		9B9644551CC2973C00D4B5D7 /* DopeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9644541CC2973C00D4B5D7 /* DopeTests.swift */; };
 		9B9644601CC2973C00D4B5D7 /* DopeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B96445F1CC2973C00D4B5D7 /* DopeUITests.swift */; };
 		9BA927431CC299540086D64E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA927421CC299540086D64E /* LoginViewController.swift */; };
-		9BA9274F1CC29BDD0086D64E /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BA927451CC29BDD0086D64E /* FBSDKCoreKit.framework */; };
-		9BA927501CC29BDD0086D64E /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BA927461CC29BDD0086D64E /* FBSDKLoginKit.framework */; };
-		9BA927521CC29BDD0086D64E /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BA927481CC29BDD0086D64E /* FBSDKShareKit.framework */; };
 		9BA927591CC29FE20086D64E /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BA927581CC29FE20086D64E /* Bolts.framework */; };
 		9BA9275B1CC2B7AC0086D64E /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA9275A1CC2B7AC0086D64E /* CurrentUser.swift */; };
 		9BA9275D1CC2BD390086D64E /* FirebaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA9275C1CC2BD390086D64E /* FirebaseHelper.swift */; };
@@ -101,9 +98,6 @@
 		9B96445F1CC2973C00D4B5D7 /* DopeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DopeUITests.swift; sourceTree = "<group>"; };
 		9B9644611CC2973C00D4B5D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9BA927421CC299540086D64E /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		9BA927451CC29BDD0086D64E /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
-		9BA927461CC29BDD0086D64E /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
-		9BA927481CC29BDD0086D64E /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 		9BA927581CC29FE20086D64E /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		9BA9275A1CC2B7AC0086D64E /* CurrentUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
 		9BA9275C1CC2BD390086D64E /* FirebaseHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseHelper.swift; sourceTree = "<group>"; };
@@ -123,10 +117,7 @@
 				3624CAAA1CC807DA00D53288 /* CoreFoundation.framework in Frameworks */,
 				9BA927591CC29FE20086D64E /* Bolts.framework in Frameworks */,
 				712ED15FC6796F8903A0EF1C /* Pods_Dope.framework in Frameworks */,
-				9BA9274F1CC29BDD0086D64E /* FBSDKCoreKit.framework in Frameworks */,
-				9BA927521CC29BDD0086D64E /* FBSDKShareKit.framework in Frameworks */,
 				3624CA831CC8037000D53288 /* R5Streaming.framework in Frameworks */,
-				9BA927501CC29BDD0086D64E /* FBSDKLoginKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,9 +216,6 @@
 				3624CAA61CC8061300D53288 /* MapKit.framework */,
 				3624CA821CC8037000D53288 /* R5Streaming.framework */,
 				9BA927581CC29FE20086D64E /* Bolts.framework */,
-				9BA927451CC29BDD0086D64E /* FBSDKCoreKit.framework */,
-				9BA927461CC29BDD0086D64E /* FBSDKLoginKit.framework */,
-				9BA927481CC29BDD0086D64E /* FBSDKShareKit.framework */,
 				68868F20CEB0A8646B2D2A97 /* Pods_Dope.framework */,
 			);
 			name = Frameworks;
