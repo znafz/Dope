@@ -1,31 +1,29 @@
 //
-//  CreateAccountViewController.swift
+//  InitViewController.swift
 //  Dope
 //
-//  Created by Zach Nafziger on 4/16/16.
+//  Created by Zach Nafziger on 4/21/16.
 //  Copyright © 2016 Zach Nafziger. All rights reserved.
 //
 
 import UIKit
 
-class CreateAccountViewController: UIViewController {
-    @IBOutlet weak var nameField:UITextField!
-    @IBOutlet weak var emailField:UITextField!
-    @IBOutlet weak var passwordField:UITextField!
-    @IBAction func create(){
-        if let name = nameField.text, email = emailField.text, password = passwordField.text{
-            FirebaseHelper().createUser(email, password: password, displayName: name, completionHandler: {success in
-                if(success){
-                    self.navigationController?.popViewControllerAnimated(true)
-                }
-            })
-            
-        }
-    }
+class InitViewController: UIViewController {
     
+    @IBAction func logout(segue:UIStoryboardSegue){
+        
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        FirebaseHelper().checkLoginState({loggedIn in
+            if(loggedIn){
+                self.performSegueWithIdentifier("homeSegue", sender: self)
+            } else{
+                self.performSegueWithIdentifier("loginSegue", sender: self)
+            }
+        })
+        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,7 +31,7 @@ class CreateAccountViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    
+
     /*
     // MARK: - Navigation
 

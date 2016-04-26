@@ -17,9 +17,7 @@ class LoginViewController: UIViewController{
     @IBOutlet weak var loginButton:UIButton!
     @IBOutlet weak var invalidLabel:UILabel!
     
-    @IBAction func backToLogin(segue:UIStoryboardSegue){
-        
-    }
+    
     
     @IBAction func login(){
         // Create a reference to a Firebase location
@@ -46,8 +44,16 @@ class LoginViewController: UIViewController{
         indicator.hidden = true
         invalidLabel.hidden = true
 
-
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        self.navigationController!.navigationBar.hidden = true
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        self.navigationController!.navigationBar.hidden = false
+    }
+
     
     
 
