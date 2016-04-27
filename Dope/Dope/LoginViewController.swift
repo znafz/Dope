@@ -8,69 +8,50 @@
 
 import UIKit
 import Firebase
+import FirebaseUI
 
-class LoginViewController: UIViewController{
+class LoginViewController: UIViewController {
     
-    @IBOutlet weak var emailField:UITextField!
-    @IBOutlet weak var passwordField:UITextField!
-    @IBOutlet weak var indicator:UIActivityIndicatorView!
-    @IBOutlet weak var loginButton:UIButton!
-    @IBOutlet weak var invalidLabel:UILabel!
+    var loginViewController: FirebaseLoginViewController!
     
-    
-    
-    @IBAction func login(){
-        // Create a reference to a Firebase location
-        indicator.hidden = false
-        loginButton.hidden = true
-        loginButton.enabled = false
-        if let email = emailField.text, password = passwordField.text{
-            FirebaseHelper().login(email, password: password, completionHandler: {success in
-                if(success){
-                    self.performSegueWithIdentifier("loginSegue", sender: self)
-                } else{
-                    self.indicator.hidden = true
-                    self.loginButton.hidden = false
-                    self.loginButton.enabled = true
-                    self.invalidLabel.hidden = false
-                }
-            })
+    @IBAction func login() {
+        if (loginViewController.currentUser() == nil) {
+            presentViewController(loginViewController, animated: true, completion: nil)
         }
-        
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        indicator.hidden = true
-        invalidLabel.hidden = true
-
+       
+        let firebaseRef = Firebase(url: "https://popping-inferno-6138.firebaseio.com/")
+        loginViewController = FirebaseLoginViewController(ref: firebaseRef)
+        
+        loginViewController.enableProvider(.Password)
+        loginViewController.enableProvider(.Facebook)
+        //loginViewController.enableProvider(.Twitter)
+        loginViewController.passwordAuthProvider = FirebasePasswordAuthProvider(ref: firebaseRef, authDelegate: loginViewController)
+        
+        loginViewController.didDismissWithBlock { (user: FAuthData!, error: NSError!) -> Void in
+            if (user != nil) {
+                // Handle user case
+                self.performSegueWithIdentifier("loginSuccessSegue", sender: self)
+            } else if (error != nil) {
+                // Handle error case
+            } else {
+                // Handle cancel case
+            }
+        }
+        
     }
     
     override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
         self.navigationController!.navigationBar.hidden = true
     }
     
     override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
         self.navigationController!.navigationBar.hidden = false
     }
-
-    
-    
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
