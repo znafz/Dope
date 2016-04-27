@@ -698,7 +698,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.gcc.Dope;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "10bdd105-42ca-4bb4-8da4-c72a2fd740d2";
 				SWIFT_OBJC_BRIDGING_HEADER = "Dope/Dope-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -722,7 +722,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.gcc.Dope;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "10bdd105-42ca-4bb4-8da4-c72a2fd740d2";
 				SWIFT_OBJC_BRIDGING_HEADER = "Dope/Dope-Bridging-Header.h";
 			};
 			name = Release;

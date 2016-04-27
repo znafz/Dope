@@ -15,7 +15,7 @@ class AppDelegate: FirebaseAppDelegate {
     override func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         let oneSignal = OneSignal(launchOptions: launchOptions, appId: "bd07345d-ef11-4307-b129-d936a6810241", handleNotification: nil)
         
-        OneSignal.defaultClient().enableInAppAlertNotification(true)
+        oneSignal.enableInAppAlertNotification(true)
         
         
         return true
