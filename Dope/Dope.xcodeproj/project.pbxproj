@@ -34,6 +34,8 @@
 		9B4E14561CC9B9DC0053D17F /* 08 Underground.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9B4E14541CC9B9D80053D17F /* 08 Underground.ttf */; };
 		9B4E14571CC9B9DD0053D17F /* 08 Underground.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9B4E14541CC9B9D80053D17F /* 08 Underground.ttf */; };
 		9B4E14581CC9BA890053D17F /* 08 Underground.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9B4E14541CC9B9D80053D17F /* 08 Underground.ttf */; };
+		9B4E14941CD1138B0053D17F /* OneSignal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B4E14931CD1138B0053D17F /* OneSignal.framework */; };
+		9B4E14961CD113ED0053D17F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B4E14951CD113ED0053D17F /* SystemConfiguration.framework */; };
 		9B9644401CC2973C00D4B5D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B96443F1CC2973C00D4B5D7 /* AppDelegate.swift */; };
 		9B9644451CC2973C00D4B5D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B9644431CC2973C00D4B5D7 /* Main.storyboard */; };
 		9B9644471CC2973C00D4B5D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B9644461CC2973C00D4B5D7 /* Assets.xcassets */; };
@@ -97,6 +99,8 @@
 		366F98F91CC94CD8001FC2D5 /* DoubleSubscriber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoubleSubscriber.swift; sourceTree = "<group>"; };
 		68868F20CEB0A8646B2D2A97 /* Pods_Dope.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dope.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B4E14541CC9B9D80053D17F /* 08 Underground.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "08 Underground.ttf"; sourceTree = "<group>"; };
+		9B4E14931CD1138B0053D17F /* OneSignal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OneSignal.framework; sourceTree = "<group>"; };
+		9B4E14951CD113ED0053D17F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		9B96443C1CC2973C00D4B5D7 /* Dope.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dope.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B96443F1CC2973C00D4B5D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9B9644441CC2973C00D4B5D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -129,9 +133,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B4E14961CD113ED0053D17F /* SystemConfiguration.framework in Frameworks */,
 				3624CAAE1CC807F900D53288 /* libstdc++.6.0.9.tbd in Frameworks */,
 				3624CAAC1CC807E900D53288 /* libiconv.2.4.0.tbd in Frameworks */,
 				3624CAAA1CC807DA00D53288 /* CoreFoundation.framework in Frameworks */,
+				9B4E14941CD1138B0053D17F /* OneSignal.framework in Frameworks */,
 				9BA927591CC29FE20086D64E /* Bolts.framework in Frameworks */,
 				712ED15FC6796F8903A0EF1C /* Pods_Dope.framework in Frameworks */,
 				9BA9274F1CC29BDD0086D64E /* FBSDKCoreKit.framework in Frameworks */,
@@ -232,6 +238,8 @@
 		7BF702B420160D36E38A635F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9B4E14951CD113ED0053D17F /* SystemConfiguration.framework */,
+				9B4E14931CD1138B0053D17F /* OneSignal.framework */,
 				3624CAAD1CC807F900D53288 /* libstdc++.6.0.9.tbd */,
 				3624CAAB1CC807E900D53288 /* libiconv.2.4.0.tbd */,
 				3624CAA91CC807DA00D53288 /* CoreFoundation.framework */,
@@ -392,11 +400,14 @@
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = 74YMV2J9D7;
 						SystemCapabilities = {
-							com.apple.InterAppAudio = {
+							com.apple.BackgroundModes = {
 								enabled = 1;
 							};
+							com.apple.InterAppAudio = {
+								enabled = 0;
+							};
 							com.apple.Maps.iOS = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};
@@ -685,7 +696,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = Dope/Dope.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -695,6 +708,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.gcc.Dope;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Dope/Dope-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -706,7 +720,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = Dope/Dope.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -716,6 +732,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.gcc.Dope;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Dope/Dope-Bridging-Header.h";
 			};
 			name = Release;
