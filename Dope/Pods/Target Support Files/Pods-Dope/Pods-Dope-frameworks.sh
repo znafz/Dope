@@ -84,12 +84,18 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "Pods-Dope/Bolts.framework"
+  install_framework "Pods-Dope/FBSDKCoreKit.framework"
+  install_framework "Pods-Dope/FBSDKLoginKit.framework"
   install_framework "Pods-Dope/Firebase.framework"
   install_framework "Pods-Dope/FirebaseUI.framework"
   install_framework "Pods-Dope/Koloda.framework"
   install_framework "Pods-Dope/pop.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "Pods-Dope/Bolts.framework"
+  install_framework "Pods-Dope/FBSDKCoreKit.framework"
+  install_framework "Pods-Dope/FBSDKLoginKit.framework"
   install_framework "Pods-Dope/Firebase.framework"
   install_framework "Pods-Dope/FirebaseUI.framework"
   install_framework "Pods-Dope/Koloda.framework"
