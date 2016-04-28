@@ -19,7 +19,6 @@ class Stream: NSObject {
     override init() {
         super.init()
         loadTests()
-        NSLog(Stream.dictionary!.description)
     }
     
     static func sections() -> Int {

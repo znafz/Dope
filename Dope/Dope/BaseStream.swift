@@ -35,7 +35,6 @@ class BaseStream: UIViewController, R5StreamDelegate {
     func getConfig() -> R5Configuration {
         // Set up the configuration
         let config = R5Configuration()
-        print(Stream.parameters)
         config.host = Stream.getParameter("host") as! String
         config.port = Int32(Stream.getParameter("port") as! Int)
         config.contextName = Stream.getParameter("context") as! String
