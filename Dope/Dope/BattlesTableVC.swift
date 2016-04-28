@@ -10,20 +10,20 @@ import UIKit
 import Firebase
 import FirebaseUI
 
-class BattlesTableVC: UITableViewController{
+class BattlesTableVC: UITableViewController {
+    
     var dataSource = FirebaseTableViewDataSource()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let ref = Firebase(url: "https://popping-inferno-6138.firebaseio.com/battles")
         let query:FQuery = ref.queryOrderedByChild("in_progress").queryEqualToValue(true)
-        
         
         self.dataSource = FirebaseTableViewDataSource(query:query,
                                                       modelClass: FDataSnapshot.self,
                                                       cellClass: UITableViewCell.self,
                                                       cellReuseIdentifier: "battleCell",
                                                       view: self.tableView)
-        
         
         self.dataSource.populateCellWithBlock { (cell: UITableViewCell, obj: NSObject) -> Void in
             let snap = obj as! FDataSnapshot // Force cast to an FDataSnapshot
@@ -63,8 +63,14 @@ class BattlesTableVC: UITableViewController{
         return cell
     }
     
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        Stream.setStream1Name("desktop")
+        Stream.setStream2Name("laptop")
+        performSegueWithIdentifier("battleViewerSegue", sender: self)
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let dest = segue.destinationViewController
+        //let dest = segue.destinationViewController
     }
 
 }

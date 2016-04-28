@@ -10,10 +10,11 @@ import UIKit
 import R5Streaming
 
 class Subscribe: BaseStream {
+    
+    let ip = "10.22.102.182"
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupDefaultR5VideoViewController()
         
         let config = getConfig()
@@ -23,7 +24,7 @@ class Subscribe: BaseStream {
         self.subscribeStream!.delegate = self
         self.subscribeStream?.client = self;
         currentView?.attachStream(subscribeStream)
-        self.subscribeStream!.play("teat")
+        self.subscribeStream!.play(Stream.getParameter("stream1") as! String)
     }
     
     override func viewWillDisappear(animated: Bool) {

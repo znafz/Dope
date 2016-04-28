@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -282,42 +281,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v1K-Bu-kDa" customClass="KolodaView" customModule="Koloda">
-                                <rect key="frame" x="95" y="0.0" width="432" height="487"/>
+                                <rect key="frame" x="141" y="20" width="318" height="448"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pQw-gM-R5G">
-                                        <rect key="frame" x="0.0" y="0.0" width="432" height="64"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="64F-aG-rm8">
-                                                <rect key="frame" x="22" y="20" width="19" height="23"/>
-                                                <state key="normal" image="ic_card_from_bg">
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tNa-7w-5eq">
-                                                <rect key="frame" x="377" y="20" width="21" height="23"/>
-                                                <state key="normal" image="btn_undo">
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="undoButtonTapped" destination="HIV-ge-DX0" eventType="touchUpInside" id="ls9-Ln-Uk9"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                    </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HB1-5M-V3d">
-                                        <rect key="frame" x="150" y="416" width="132" height="32"/>
+                                        <rect key="frame" x="93" y="393" width="132" height="32"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SHJ-xb-vdY">
-                                                <rect key="frame" x="88" y="0.0" width="32" height="32"/>
-                                                <state key="normal" image="btn_like_normal">
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <state key="highlighted" image="btn_like_pressed"/>
-                                                <connections>
-                                                    <action selector="leftButtonTapped" destination="HIV-ge-DX0" eventType="touchUpInside" id="fIp-SQ-4OX"/>
-                                                </connections>
-                                            </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eaN-nn-blF">
                                                 <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
                                                 <state key="normal" image="btn_skip_normal">
@@ -325,44 +293,48 @@
                                                 </state>
                                                 <state key="highlighted" image="btn_skip_pressed"/>
                                                 <connections>
-                                                    <action selector="leftButtonTapped" destination="HIV-ge-DX0" eventType="touchUpInside" id="qTK-wv-aFp"/>
+                                                    <action selector="leftButtonTapped" destination="HIV-ge-DX0" eventType="touchUpInside" id="Aqg-2R-cle"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SHJ-xb-vdY">
+                                                <rect key="frame" x="100" y="0.0" width="32" height="32"/>
+                                                <state key="normal" image="btn_like_normal">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <state key="highlighted" image="btn_like_pressed"/>
+                                                <connections>
+                                                    <action selector="leftButtonTapped" destination="HIV-ge-DX0" eventType="touchUpInside" id="fIp-SQ-4OX"/>
+                                                    <action selector="rightButtonTapped" destination="HIV-ge-DX0" eventType="touchUpInside" id="rtj-4h-Pup"/>
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="487" id="6Ss-Aj-FZe"/>
-                                    <constraint firstItem="HB1-5M-V3d" firstAttribute="top" secondItem="v1K-Bu-kDa" secondAttribute="top" constant="416" id="AOJ-iW-GyV"/>
-                                    <constraint firstItem="HB1-5M-V3d" firstAttribute="leading" secondItem="v1K-Bu-kDa" secondAttribute="leading" constant="150" id="P7V-2K-M9J"/>
-                                    <constraint firstItem="pQw-gM-R5G" firstAttribute="centerX" secondItem="HB1-5M-V3d" secondAttribute="centerX" id="R6J-KT-8ZW"/>
-                                    <constraint firstItem="HB1-5M-V3d" firstAttribute="centerX" secondItem="v1K-Bu-kDa" secondAttribute="centerX" id="TL2-1e-aQi"/>
-                                    <constraint firstAttribute="bottom" secondItem="HB1-5M-V3d" secondAttribute="bottom" constant="39" id="WVk-da-Md0"/>
-                                    <constraint firstAttribute="width" secondItem="v1K-Bu-kDa" secondAttribute="height" multiplier="71:80" id="rS5-4D-9nu"/>
-                                    <constraint firstItem="pQw-gM-R5G" firstAttribute="leading" secondItem="v1K-Bu-kDa" secondAttribute="leading" id="sK1-fu-BUh"/>
-                                    <constraint firstItem="pQw-gM-R5G" firstAttribute="top" secondItem="v1K-Bu-kDa" secondAttribute="top" id="uYd-83-T5A"/>
-                                    <constraint firstAttribute="bottom" secondItem="pQw-gM-R5G" secondAttribute="bottom" constant="423" id="zHq-E4-ez1"/>
+                                    <constraint firstAttribute="bottom" secondItem="HB1-5M-V3d" secondAttribute="bottom" constant="23" id="COi-ey-ig0"/>
+                                    <constraint firstItem="HB1-5M-V3d" firstAttribute="top" secondItem="v1K-Bu-kDa" secondAttribute="top" constant="393" id="Hsw-dy-H7P"/>
+                                    <constraint firstItem="HB1-5M-V3d" firstAttribute="leading" secondItem="v1K-Bu-kDa" secondAttribute="leading" constant="93" id="K16-4Z-nrh"/>
+                                    <constraint firstAttribute="width" constant="318" id="WDb-1S-tBY"/>
+                                    <constraint firstItem="HB1-5M-V3d" firstAttribute="centerX" secondItem="v1K-Bu-kDa" secondAttribute="centerX" id="nlr-uK-LFV"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="v1K-Bu-kDa" secondAttribute="trailing" constant="53" id="6HZ-bS-LnE"/>
-                            <constraint firstItem="v1K-Bu-kDa" firstAttribute="top" secondItem="Hm3-pk-6xK" secondAttribute="bottom" id="TjZ-Og-d9T"/>
-                            <constraint firstItem="v1K-Bu-kDa" firstAttribute="top" secondItem="Hm3-pk-6xK" secondAttribute="bottom" id="WaG-pt-o38"/>
-                            <constraint firstItem="v1K-Bu-kDa" firstAttribute="leading" secondItem="OyH-TG-xNy" secondAttribute="leadingMargin" constant="75" id="gMY-hy-hOY"/>
-                            <constraint firstItem="v1K-Bu-kDa" firstAttribute="bottom" secondItem="71o-F6-ciQ" secondAttribute="top" id="ghk-0p-hQ3"/>
-                            <constraint firstItem="71o-F6-ciQ" firstAttribute="top" secondItem="v1K-Bu-kDa" secondAttribute="bottom" id="p3d-Ag-Ef9"/>
-                            <constraint firstItem="v1K-Bu-kDa" firstAttribute="centerY" secondItem="OyH-TG-xNy" secondAttribute="centerY" id="vZb-8e-4Nh"/>
-                            <constraint firstItem="v1K-Bu-kDa" firstAttribute="centerX" secondItem="OyH-TG-xNy" secondAttribute="centerX" constant="11" id="y9s-jO-qFG"/>
+                            <constraint firstItem="v1K-Bu-kDa" firstAttribute="top" secondItem="Hm3-pk-6xK" secondAttribute="bottom" constant="20" id="Gxk-Va-MVi"/>
+                            <constraint firstItem="v1K-Bu-kDa" firstAttribute="centerY" secondItem="OyH-TG-xNy" secondAttribute="centerY" id="QwV-KI-ZTF"/>
+                            <constraint firstItem="v1K-Bu-kDa" firstAttribute="centerX" secondItem="OyH-TG-xNy" secondAttribute="centerX" id="ZDU-64-8ap"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <tabBarItem key="tabBarItem" title="Item" id="fjz-oH-Yfx"/>
                     <connections>
+                        <outlet property="buttonView" destination="HB1-5M-V3d" id="Aec-DK-Prt"/>
                         <outlet property="cards" destination="v1K-Bu-kDa" id="fL5-bv-uun"/>
+                        <outlet property="likeButton" destination="SHJ-xb-vdY" id="bbu-yU-pkN"/>
+                        <outlet property="skipButton" destination="eaN-nn-blF" id="ccB-Bg-dKN"/>
                         <segue destination="0zq-Ng-lCf" kind="presentation" identifier="rapBattleLiveSegue" id="Y7v-38-qYe"/>
                     </connections>
                 </viewController>
@@ -393,7 +365,7 @@
                                 </connections>
                             </button>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="duj-xm-xFd">
-                                <rect key="frame" x="20" y="20" width="560" height="458"/>
+                                <rect key="frame" x="20" y="20" width="560" height="513"/>
                                 <connections>
                                     <segue destination="krD-aq-5Ka" kind="embed" identifier="embed" id="buB-UV-38r"/>
                                 </connections>
@@ -401,7 +373,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Erk-O4-gh0" firstAttribute="top" secondItem="duj-xm-xFd" secondAttribute="bottom" constant="63" id="0n7-Me-Pp0"/>
+                            <constraint firstItem="Erk-O4-gh0" firstAttribute="top" secondItem="duj-xm-xFd" secondAttribute="bottom" constant="8" id="0n7-Me-Pp0"/>
                             <constraint firstItem="Erk-O4-gh0" firstAttribute="top" secondItem="k73-y3-l6T" secondAttribute="bottom" constant="521" id="1Ak-0A-zuD"/>
                             <constraint firstItem="duj-xm-xFd" firstAttribute="leading" secondItem="DxZ-pw-qPi" secondAttribute="leadingMargin" id="HJI-od-JGC"/>
                             <constraint firstAttribute="bottom" secondItem="Erk-O4-gh0" secondAttribute="bottom" constant="20" symbolic="YES" id="XRy-dc-Dfn"/>
@@ -418,7 +390,7 @@
         <!--Rap Battle Viewer-->
         <scene sceneID="Iep-qp-cfH">
             <objects>
-                <viewController storyboardIdentifier="battleViewer" title="Rap Battle Viewer" id="Ocl-JG-7pt" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="battleViewer" title="Rap Battle Viewer" id="Ocl-JG-7pt" customClass="BattleViewerVC" customModule="Dope" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="XYm-j3-Wgo"/>
                         <viewControllerLayoutGuide type="bottom" id="XsJ-QE-qZc"/>
@@ -426,8 +398,37 @@
                     <view key="view" contentMode="scaleToFill" id="u0O-Yv-5fd">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I8q-Px-vHW">
+                                <rect key="frame" x="20" y="12" width="560" height="542"/>
+                                <connections>
+                                    <segue destination="vNx-3r-Boa" kind="embed" id="DmV-Bd-Iaj"/>
+                                </connections>
+                            </containerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tZb-9L-wI5">
+                                <rect key="frame" x="210" y="562" width="180" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="180" id="Hef-YR-gty"/>
+                                </constraints>
+                                <state key="normal" title="Quit"/>
+                                <connections>
+                                    <action selector="quit:" destination="Ocl-JG-7pt" eventType="touchUpInside" id="NBU-0G-pmR"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="XsJ-QE-qZc" firstAttribute="top" secondItem="tZb-9L-wI5" secondAttribute="bottom" constant="8" symbolic="YES" id="86r-gx-4OX"/>
+                            <constraint firstItem="I8q-Px-vHW" firstAttribute="centerX" secondItem="tZb-9L-wI5" secondAttribute="centerX" id="P2F-b9-YP5"/>
+                            <constraint firstItem="I8q-Px-vHW" firstAttribute="trailing" secondItem="u0O-Yv-5fd" secondAttribute="trailingMargin" id="a1d-pv-ebJ"/>
+                            <constraint firstItem="tZb-9L-wI5" firstAttribute="top" secondItem="I8q-Px-vHW" secondAttribute="bottom" constant="8" symbolic="YES" id="dVD-KD-UX7"/>
+                            <constraint firstItem="I8q-Px-vHW" firstAttribute="leading" secondItem="u0O-Yv-5fd" secondAttribute="leadingMargin" id="pSF-Cd-hQx"/>
+                            <constraint firstItem="I8q-Px-vHW" firstAttribute="top" secondItem="u0O-Yv-5fd" secondAttribute="topMargin" constant="12" id="rhb-aZ-i4O"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="str1" destination="I8q-Px-vHW" id="lF3-gb-GCM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ylg-rx-00l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -466,23 +467,41 @@
             </objects>
             <point key="canvasLocation" x="2597" y="611"/>
         </scene>
-        <!--Subscribe-->
+        <!--Publish-->
         <scene sceneID="2jA-V8-R6O">
             <objects>
-                <viewController id="krD-aq-5Ka" customClass="Subscribe" customModule="Dope" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="krD-aq-5Ka" customClass="Publish" customModule="Dope" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mnH-d8-Usl"/>
                         <viewControllerLayoutGuide type="bottom" id="WeV-ec-fUM"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kxR-W0-KKD">
-                        <rect key="frame" x="0.0" y="0.0" width="560" height="458"/>
+                        <rect key="frame" x="0.0" y="0.0" width="560" height="513"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fhJ-td-2DM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4055" y="-67"/>
+            <point key="canvasLocation" x="4055" y="-110.5"/>
+        </scene>
+        <!--Subscribe-->
+        <scene sceneID="vqw-v7-pXP">
+            <objects>
+                <viewController id="vNx-3r-Boa" customClass="Subscribe" customModule="Dope" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="DDC-e1-4J2"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ve0-U0-P3E"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rT9-hU-e4X">
+                        <rect key="frame" x="0.0" y="0.0" width="560" height="542"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VM7-JI-yO9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4068" y="611"/>
         </scene>
     </scenes>
     <resources>
@@ -490,8 +509,6 @@
         <image name="btn_like_pressed" width="32" height="32"/>
         <image name="btn_skip_normal" width="32" height="32"/>
         <image name="btn_skip_pressed" width="32" height="32"/>
-        <image name="btn_undo" width="21" height="21"/>
-        <image name="ic_card_from_bg" width="21" height="21"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="9Mq-5N-EvG"/>

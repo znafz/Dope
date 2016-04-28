@@ -136,7 +136,7 @@
 			<key>name</key>
 			<string>Two Way</string>
 			<key>class</key>
-			<string>TwoWayTest</string>
+			<string>TwoWay</string>
 		</dict>
 		<key>subscribe</key>
 		<dict>

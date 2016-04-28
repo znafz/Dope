@@ -10,33 +10,32 @@ import UIKit
 import R5Streaming
 
 class Publish: BaseStream {
-
     
-    override func viewDidAppear(animated: Bool) {
+    let streamName = "phone"
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        Stream.setStream2Name(streamName)
+    }
 
+    override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        
         AVAudioSession.sharedInstance().requestRecordPermission { (gotPerm: Bool) -> Void in
-           
         };
-        
-        
         setupDefaultR5VideoViewController()
         
         // Set up the configuration
         let config = getConfig()
         // Set up the connection and stream
         let connection = R5Connection(config: config)
-        
         setupPublisher(connection)
         // show preview and debug info
-
         self.currentView!.attachStream(publishStream!)
-        
-        
-        self.publishStream!.publish(Stream.getParameter("stream1") as! String, type: R5RecordTypeLive)
-        
-
-
+        self.publishStream!.publish(Stream.getParameter("stream2") as! String, type: R5RecordTypeLive)
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        closeTest()
     }
 }

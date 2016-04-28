@@ -21,7 +21,7 @@ class BaseStream: UIViewController, R5StreamDelegate {
     var publishStream: R5Stream? = nil
     var subscribeStream: R5Stream? = nil
     
-    func closeTest(){
+    func closeTest() {
         NSLog("closing view")
         if (self.publishStream != nil) {
             self.publishStream!.stop()
@@ -35,11 +35,12 @@ class BaseStream: UIViewController, R5StreamDelegate {
     func getConfig() -> R5Configuration {
         // Set up the configuration
         let config = R5Configuration()
-        config.host = "10.22.102.182"
-        config.port = 8554
-        config.contextName = "live"
+        print(Stream.parameters)
+        config.host = Stream.getParameter("host") as! String
+        config.port = Int32(Stream.getParameter("port") as! Int)
+        config.contextName = Stream.getParameter("context") as! String
         config.`protocol` = 1;
-        config.buffer_time = 1
+        config.buffer_time = Stream.getParameter("buffer_time") as! Float
         return config
     }
     

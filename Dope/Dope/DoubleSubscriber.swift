@@ -1,6 +1,6 @@
 //
 //  DoubleSubscriber.swift
-//  R5ProTestbed
+//  R5ProStream
 //
 //  Created by David Heimann on 3/14/16.
 //  Copyright © 2016 Infrared5. All rights reserved.

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3607F6ED1CD1466300C87D14 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3607F6EC1CD1466300C87D14 /* Images.xcassets */; };
+		3607F70F1CD26E9B00C87D14 /* BattleViewerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3607F70E1CD26E9B00C87D14 /* BattleViewerVC.swift */; };
+		3607F7111CD2745C00C87D14 /* TwoWayTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3607F7101CD2745C00C87D14 /* TwoWayTest.swift */; };
+		3607F7131CD2746700C87D14 /* DoubleSubscriber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3607F7121CD2746700C87D14 /* DoubleSubscriber.swift */; };
 		3624CA731CC7DD5800D53288 /* Battle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3624CA6F1CC7DD5800D53288 /* Battle.swift */; };
 		3624CA741CC7DD5800D53288 /* BattlesTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3624CA701CC7DD5800D53288 /* BattlesTableVC.swift */; };
 		3624CA751CC7DD5800D53288 /* WouldYouRapThatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3624CA721CC7DD5800D53288 /* WouldYouRapThatVC.swift */; };
@@ -26,7 +30,6 @@
 		366F98F41CC93506001FC2D5 /* Subscribe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366F98F31CC93506001FC2D5 /* Subscribe.swift */; };
 		366F98F61CC94B73001FC2D5 /* tests.plist in Resources */ = {isa = PBXBuildFile; fileRef = 366F98F51CC94B73001FC2D5 /* tests.plist */; };
 		366F98F81CC94CC6001FC2D5 /* Publish.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366F98F71CC94CC6001FC2D5 /* Publish.swift */; };
-		366F98FA1CC94CD8001FC2D5 /* DoubleSubscriber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366F98F91CC94CD8001FC2D5 /* DoubleSubscriber.swift */; };
 		712ED15FC6796F8903A0EF1C /* Pods_Dope.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68868F20CEB0A8646B2D2A97 /* Pods_Dope.framework */; };
 		9B4E144B1CC9B7300053D17F /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9B96444B1CC2973C00D4B5D7 /* Info.plist */; };
 		9B4E14521CC9B9450053D17F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B9644461CC2973C00D4B5D7 /* Assets.xcassets */; };
@@ -68,6 +71,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3607F6EC1CD1466300C87D14 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		3607F70E1CD26E9B00C87D14 /* BattleViewerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BattleViewerVC.swift; sourceTree = "<group>"; };
+		3607F7101CD2745C00C87D14 /* TwoWayTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwoWayTest.swift; sourceTree = "<group>"; };
+		3607F7121CD2746700C87D14 /* DoubleSubscriber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoubleSubscriber.swift; sourceTree = "<group>"; };
 		3624CA6F1CC7DD5800D53288 /* Battle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Battle.swift; sourceTree = "<group>"; };
 		3624CA701CC7DD5800D53288 /* BattlesTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BattlesTableVC.swift; sourceTree = "<group>"; };
 		3624CA721CC7DD5800D53288 /* WouldYouRapThatVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WouldYouRapThatVC.swift; sourceTree = "<group>"; };
@@ -91,7 +98,6 @@
 		366F98F31CC93506001FC2D5 /* Subscribe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Subscribe.swift; sourceTree = "<group>"; };
 		366F98F51CC94B73001FC2D5 /* tests.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = tests.plist; sourceTree = "<group>"; };
 		366F98F71CC94CC6001FC2D5 /* Publish.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Publish.swift; sourceTree = "<group>"; };
-		366F98F91CC94CD8001FC2D5 /* DoubleSubscriber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoubleSubscriber.swift; sourceTree = "<group>"; };
 		68868F20CEB0A8646B2D2A97 /* Pods_Dope.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dope.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B4E14541CC9B9D80053D17F /* 08 Underground.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "08 Underground.ttf"; sourceTree = "<group>"; };
 		9B96443C1CC2973C00D4B5D7 /* Dope.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dope.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -166,6 +172,7 @@
 				3624CA701CC7DD5800D53288 /* BattlesTableVC.swift */,
 				366F98F11CC93399001FC2D5 /* LiveBattleVC.swift */,
 				9BE79DB71CC9AB4C00059C03 /* HomeViewController.swift */,
+				3607F70E1CD26E9B00C87D14 /* BattleViewerVC.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -204,8 +211,9 @@
 			children = (
 				366F98AE1CC92BBE001FC2D5 /* BaseStream.swift */,
 				366F98F31CC93506001FC2D5 /* Subscribe.swift */,
+				3607F7101CD2745C00C87D14 /* TwoWayTest.swift */,
+				3607F7121CD2746700C87D14 /* DoubleSubscriber.swift */,
 				366F98F71CC94CC6001FC2D5 /* Publish.swift */,
-				366F98F91CC94CD8001FC2D5 /* DoubleSubscriber.swift */,
 			);
 			name = R5Steaming;
 			sourceTree = "<group>";
@@ -272,6 +280,7 @@
 				9B9644431CC2973C00D4B5D7 /* Main.storyboard */,
 				9B9644481CC2973C00D4B5D7 /* LaunchScreen.storyboard */,
 				3624CAB11CC90B4B00D53288 /* OverlayView.xib */,
+				3607F6EC1CD1466300C87D14 /* Images.xcassets */,
 				9B9644461CC2973C00D4B5D7 /* Assets.xcassets */,
 				9B96444B1CC2973C00D4B5D7 /* Info.plist */,
 				366F98F51CC94B73001FC2D5 /* tests.plist */,
@@ -423,6 +432,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3607F6ED1CD1466300C87D14 /* Images.xcassets in Resources */,
 				9B4E14581CC9BA890053D17F /* 08 Underground.ttf in Resources */,
 				9B4E144B1CC9B7300053D17F /* Info.plist in Resources */,
 				9B96444A1CC2973C00D4B5D7 /* LaunchScreen.storyboard in Resources */,
@@ -507,7 +517,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				366F98FA1CC94CD8001FC2D5 /* DoubleSubscriber.swift in Sources */,
 				366F98F41CC93506001FC2D5 /* Subscribe.swift in Sources */,
 				9BE79DB61CC9AA6600059C03 /* InitViewController.swift in Sources */,
 				366F98F21CC93399001FC2D5 /* LiveBattleVC.swift in Sources */,
@@ -516,15 +525,18 @@
 				366F98AF1CC92BBE001FC2D5 /* BaseStream.swift in Sources */,
 				3624CAB91CC90BC200D53288 /* CustomKolodaView.swift in Sources */,
 				9BA9275F1CC2D1DE0086D64E /* CreateAccountViewController.swift in Sources */,
+				3607F7131CD2746700C87D14 /* DoubleSubscriber.swift in Sources */,
 				3624CABA1CC90BC200D53288 /* CustomOverlayView.swift in Sources */,
 				3624CA811CC800EE00D53288 /* ALToastView.m in Sources */,
 				9BA9275D1CC2BD390086D64E /* FirebaseHelper.swift in Sources */,
 				9BA927431CC299540086D64E /* LoginViewController.swift in Sources */,
+				3607F7111CD2745C00C87D14 /* TwoWayTest.swift in Sources */,
 				9BA9275B1CC2B7AC0086D64E /* CurrentUser.swift in Sources */,
 				9B9644401CC2973C00D4B5D7 /* AppDelegate.swift in Sources */,
 				3624CAB81CC90BC200D53288 /* ExampleOverlayView.swift in Sources */,
 				3624CA741CC7DD5800D53288 /* BattlesTableVC.swift in Sources */,
 				366F98ED1CC931B1001FC2D5 /* Stream.swift in Sources */,
+				3607F70F1CD26E9B00C87D14 /* BattleViewerVC.swift in Sources */,
 				3624CA731CC7DD5800D53288 /* Battle.swift in Sources */,
 				9BE79DB41CC94CB400059C03 /* User.swift in Sources */,
 				3624CA751CC7DD5800D53288 /* WouldYouRapThatVC.swift in Sources */,

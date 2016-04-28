@@ -14,6 +14,9 @@ private var numberOfCards = 5
 class WouldYouRapThatVC: UIViewController {
 
     @IBOutlet weak var cards: KolodaView!
+    @IBOutlet weak var buttonView: UIView!
+    @IBOutlet weak var skipButton: UIButton!
+    @IBOutlet weak var likeButton: UIButton!
     
     private var dataSource: Array<UIImage> = {
         var array: Array<UIImage> = []
@@ -28,7 +31,7 @@ class WouldYouRapThatVC: UIViewController {
         super.viewDidLoad()
         cards.dataSource = self
         cards.delegate = self
-        // Do any additional setup after loading the view.
+        
     }
 
     /*
@@ -43,15 +46,13 @@ class WouldYouRapThatVC: UIViewController {
     
     //MARK: IBActions
     @IBAction func leftButtonTapped() {
+        skipButton.imageView?.image = UIImage(named: "btn_skip_pressed")
         cards.swipe(SwipeResultDirection.Left)
     }
     
     @IBAction func rightButtonTapped() {
+        likeButton.imageView?.image = UIImage(named: "btn_like_pressed")
         cards.swipe(SwipeResultDirection.Right)
-    }
-    
-    @IBAction func undoButtonTapped() {
-        cards.revertAction()
     }
 
 }
@@ -68,6 +69,8 @@ extension WouldYouRapThatVC: KolodaViewDelegate {
     func koloda(koloda: KolodaView, didSwipeCardAtIndex index: UInt, inDirection direction: SwipeResultDirection) {
         // TODO: Check for match here.
         // If there is a match, open a new rap battle and begin broadcasting!
+        Stream.setStream2Name("laptop")
+        Stream.setStream1Name("phone")
         performSegueWithIdentifier("rapBattleLiveSegue", sender: self)
     }
 }
