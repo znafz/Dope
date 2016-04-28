@@ -36,6 +36,7 @@
 		9B4E14581CC9BA890053D17F /* 08 Underground.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9B4E14541CC9B9D80053D17F /* 08 Underground.ttf */; };
 		9B4E14941CD1138B0053D17F /* OneSignal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B4E14931CD1138B0053D17F /* OneSignal.framework */; };
 		9B4E14961CD113ED0053D17F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B4E14951CD113ED0053D17F /* SystemConfiguration.framework */; };
+		9B4E14981CD26B550053D17F /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4E14971CD26B550053D17F /* Notification.swift */; };
 		9B9644401CC2973C00D4B5D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B96443F1CC2973C00D4B5D7 /* AppDelegate.swift */; };
 		9B9644451CC2973C00D4B5D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B9644431CC2973C00D4B5D7 /* Main.storyboard */; };
 		9B9644471CC2973C00D4B5D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B9644461CC2973C00D4B5D7 /* Assets.xcassets */; };
@@ -98,6 +99,7 @@
 		9B4E14541CC9B9D80053D17F /* 08 Underground.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "08 Underground.ttf"; sourceTree = "<group>"; };
 		9B4E14931CD1138B0053D17F /* OneSignal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OneSignal.framework; sourceTree = "<group>"; };
 		9B4E14951CD113ED0053D17F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		9B4E14971CD26B550053D17F /* Notification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		9B96443C1CC2973C00D4B5D7 /* Dope.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dope.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B96443F1CC2973C00D4B5D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9B9644441CC2973C00D4B5D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 				3624CA6F1CC7DD5800D53288 /* Battle.swift */,
 				9BA9275A1CC2B7AC0086D64E /* CurrentUser.swift */,
 				9BE79DB31CC94CB400059C03 /* User.swift */,
+				9B4E14971CD26B550053D17F /* Notification.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -526,6 +529,7 @@
 				9BE79DB81CC9AB4C00059C03 /* HomeViewController.swift in Sources */,
 				366F98AF1CC92BBE001FC2D5 /* BaseStream.swift in Sources */,
 				3624CAB91CC90BC200D53288 /* CustomKolodaView.swift in Sources */,
+				9B4E14981CD26B550053D17F /* Notification.swift in Sources */,
 				9BA9275F1CC2D1DE0086D64E /* CreateAccountViewController.swift in Sources */,
 				3624CABA1CC90BC200D53288 /* CustomOverlayView.swift in Sources */,
 				3624CA811CC800EE00D53288 /* ALToastView.m in Sources */,

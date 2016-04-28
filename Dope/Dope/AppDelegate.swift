@@ -13,9 +13,9 @@ import FirebaseUI
 class AppDelegate: FirebaseAppDelegate {
 
     override func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        let oneSignal = OneSignal(launchOptions: launchOptions, appId: "bd07345d-ef11-4307-b129-d936a6810241", handleNotification: nil)
+        PushServer.sharedInstance.server = OneSignal(launchOptions: launchOptions, appId: "bd07345d-ef11-4307-b129-d936a6810241", handleNotification: nil)
         
-        oneSignal.enableInAppAlertNotification(true)
+        PushServer.sharedInstance.server.enableInAppAlertNotification(true)
         
         
         return true

@@ -23,7 +23,7 @@ class Subscribe: BaseStream {
         self.subscribeStream!.delegate = self
         self.subscribeStream?.client = self;
         currentView?.attachStream(subscribeStream)
-        self.subscribeStream!.play("teat")
+        self.subscribeStream!.play("phone")
     }
     
     override func viewWillDisappear(animated: Bool) {

@@ -67,33 +67,27 @@ class FirebaseHelper{
         })
     }
     
-    func login(email:String, password:String, completionHandler:(Bool)->(Void)){
-        baseRef.authUser(email, password: password,
-                         withCompletionBlock: { error, authData in
-                            if error != nil {
-                                // There was an error logging in to this account
-                                print("couldn't log in")
-                                completionHandler(false)
-                            } else {
-                                // We are now logged in
-                                //get the user's info
-                                self.usersRef.childByAppendingPath(authData.uid).observeSingleEventOfType(.Value, withBlock: {
-                                    snapshot in
-                                    let dName = snapshot.value.objectForKey("display_name") as! String
-                                    let numBattles = snapshot.value.objectForKey("number_of_battles") as! Int
-                                    let numWins = snapshot.value.objectForKey("number_of_wins") as! Int
-                                    var pData = authData.providerData as! Dictionary<String,AnyObject>
-                                    self.usersRef.childByAppendingPath(authData.uid).childByAppendingPath("image_url").setValue(authData.providerData["profileImageURL"] as! String)
-                                    CurrentUser.sharedInstance.login(authData.uid, email: pData["email"] as! String, token: authData.token, imageURL: pData["profileImageURL"] as! String, displayName: dName, numberOfBattles: numBattles, numberOfWins: numWins)
-                                    print("logged in as \(CurrentUser.sharedInstance.email!)")
-                                    //mark user as logged in and online
-                                    self.usersRef.childByAppendingPath(authData.uid).childByAppendingPath("logged_in").setValue(true)
-                                    self.setOnline()
-                                    
-                                    completionHandler(true)
-                                })
-                                
-                            }
+    func login(authData:FAuthData, completionHandler:(Bool)->(Void)){
+        // We are now logged in
+        //get the user's info
+        self.usersRef.childByAppendingPath(authData.uid).observeSingleEventOfType(.Value, withBlock: {
+            snapshot in
+            let dName = snapshot.value.objectForKey("display_name") as! String
+            let numBattles = snapshot.value.objectForKey("number_of_battles") as! Int
+            let numWins = snapshot.value.objectForKey("number_of_wins") as! Int
+            var pData = authData.providerData as! Dictionary<String,AnyObject>
+            self.usersRef.childByAppendingPath(authData.uid).childByAppendingPath("image_url").setValue(authData.providerData["profileImageURL"] as! String)
+            CurrentUser.sharedInstance.login(authData.uid, email: pData["email"] as! String, token: authData.token, imageURL: pData["profileImageURL"] as! String, displayName: dName, numberOfBattles: numBattles, numberOfWins: numWins)
+            print("now logged in as \(CurrentUser.sharedInstance.email!)")
+            //mark user as logged in and online
+            self.usersRef.childByAppendingPath(authData.uid).childByAppendingPath("logged_in").setValue(true)
+            self.setOnline()
+            PushServer.sharedInstance.server.IdsAvailable({ (userId, pushToken) in
+                print("user id : \(userId)")
+                self.usersRef.childByAppendingPath(authData.uid).childByAppendingPath("one_signal_id").setValue(userId)
+                completionHandler(true)
+            })
+            
         })
     }
     
