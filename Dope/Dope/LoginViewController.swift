@@ -22,7 +22,6 @@ class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-       
         let firebaseRef = Firebase(url: "https://popping-inferno-6138.firebaseio.com/")
         loginViewController = FirebaseLoginViewController(ref: firebaseRef)
         

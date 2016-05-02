@@ -40,6 +40,9 @@
 		9B4E14941CD1138B0053D17F /* OneSignal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B4E14931CD1138B0053D17F /* OneSignal.framework */; };
 		9B4E14961CD113ED0053D17F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B4E14951CD113ED0053D17F /* SystemConfiguration.framework */; };
 		9B4E14981CD26B550053D17F /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4E14971CD26B550053D17F /* Notification.swift */; };
+		9B4E149C1CD6C6C40053D17F /* Rhyme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4E149B1CD6C6C40053D17F /* Rhyme.swift */; };
+		9B4E149E1CD6C83D0053D17F /* Threading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4E149D1CD6C83D0053D17F /* Threading.swift */; };
+		9B4E14A21CD6CE390053D17F /* words.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9B4E14A11CD6CE390053D17F /* words.txt */; };
 		9B9644401CC2973C00D4B5D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B96443F1CC2973C00D4B5D7 /* AppDelegate.swift */; };
 		9B9644451CC2973C00D4B5D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B9644431CC2973C00D4B5D7 /* Main.storyboard */; };
 		9B9644471CC2973C00D4B5D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B9644461CC2973C00D4B5D7 /* Assets.xcassets */; };
@@ -106,6 +109,9 @@
 		9B4E14931CD1138B0053D17F /* OneSignal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OneSignal.framework; sourceTree = "<group>"; };
 		9B4E14951CD113ED0053D17F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		9B4E14971CD26B550053D17F /* Notification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
+		9B4E149B1CD6C6C40053D17F /* Rhyme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rhyme.swift; sourceTree = "<group>"; };
+		9B4E149D1CD6C83D0053D17F /* Threading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Threading.swift; sourceTree = "<group>"; };
+		9B4E14A11CD6CE390053D17F /* words.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = words.txt; sourceTree = "<group>"; };
 		9B96443C1CC2973C00D4B5D7 /* Dope.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dope.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B96443F1CC2973C00D4B5D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9B9644441CC2973C00D4B5D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -168,6 +174,7 @@
 			children = (
 				9BA9275C1CC2BD390086D64E /* FirebaseHelper.swift */,
 				366F98EC1CC931B1001FC2D5 /* Stream.swift */,
+				9B4E149D1CD6C83D0053D17F /* Threading.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -192,6 +199,8 @@
 				9BA9275A1CC2B7AC0086D64E /* CurrentUser.swift */,
 				9BE79DB31CC94CB400059C03 /* User.swift */,
 				9B4E14971CD26B550053D17F /* Notification.swift */,
+				9B4E149B1CD6C6C40053D17F /* Rhyme.swift */,
+				9B4E14A11CD6CE390053D17F /* words.txt */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -454,6 +463,7 @@
 				3624CAB21CC90B4B00D53288 /* OverlayView.xib in Resources */,
 				3624CAB01CC8F8AF00D53288 /* Foodini.png in Resources */,
 				366F98F61CC94B73001FC2D5 /* tests.plist in Resources */,
+				9B4E14A21CD6CE390053D17F /* words.txt in Resources */,
 				9B9644451CC2973C00D4B5D7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -546,11 +556,13 @@
 				9BA9275D1CC2BD390086D64E /* FirebaseHelper.swift in Sources */,
 				9BA927431CC299540086D64E /* LoginViewController.swift in Sources */,
 				3607F7111CD2745C00C87D14 /* TwoWayTest.swift in Sources */,
+				9B4E149C1CD6C6C40053D17F /* Rhyme.swift in Sources */,
 				9BA9275B1CC2B7AC0086D64E /* CurrentUser.swift in Sources */,
 				9B9644401CC2973C00D4B5D7 /* AppDelegate.swift in Sources */,
 				3624CAB81CC90BC200D53288 /* ExampleOverlayView.swift in Sources */,
 				3624CA741CC7DD5800D53288 /* BattlesTableVC.swift in Sources */,
 				366F98ED1CC931B1001FC2D5 /* Stream.swift in Sources */,
+				9B4E149E1CD6C83D0053D17F /* Threading.swift in Sources */,
 				3607F70F1CD26E9B00C87D14 /* BattleViewerVC.swift in Sources */,
 				3624CA731CC7DD5800D53288 /* Battle.swift in Sources */,
 				9BE79DB41CC94CB400059C03 /* User.swift in Sources */,

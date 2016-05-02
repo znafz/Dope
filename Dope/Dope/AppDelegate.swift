@@ -13,12 +13,12 @@ import FirebaseUI
 class AppDelegate: FirebaseAppDelegate {
 
     override func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        
         // Override point for customization after application launch.
         _ = Stream.sharedInstance
         _ = Stream.dictionary
         PushServer.sharedInstance.server = OneSignal(launchOptions: launchOptions, appId: "bd07345d-ef11-4307-b129-d936a6810241", handleNotification: nil)
         PushServer.sharedInstance.server.enableInAppAlertNotification(true)
-        
         return true
     }
 
