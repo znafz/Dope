@@ -362,6 +362,9 @@
                             </containerView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JBg-jA-5uo">
                                 <rect key="frame" x="0.0" y="512" width="600" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="600" id="VCo-PA-gpd"/>
+                                </constraints>
                                 <items>
                                     <barButtonItem title="Word" width="288" id="1W0-BY-Cmv">
                                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -385,6 +388,9 @@
                             </toolbar>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rCt-Bo-nWu">
                                 <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="600" id="RpN-az-QSe"/>
+                                </constraints>
                                 <items>
                                     <barButtonItem title="Quit" width="380" id="tPN-yo-A6N">
                                         <connections>

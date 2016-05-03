@@ -56,15 +56,16 @@ class RhymeRepo{
     func getRhymes(word:String)->[String]{
         var tempRhymes:[String] = []
         let url = NSURL(string: "\(rhymeApiUrl)\(word)")
-        let data = NSData(contentsOfURL: url!)
-        do{
-            let parsedData =  try NSJSONSerialization.JSONObjectWithData(data!, options: .MutableContainers) as! [AnyObject]
-            for w in parsedData{
-                tempRhymes.append("\(w["word"]!!)")
+        if let data = NSData(contentsOfURL: url!) {
+            do {
+                let parsedData =  try NSJSONSerialization.JSONObjectWithData(data, options: .MutableContainers) as! [AnyObject]
+                for w in parsedData{
+                    tempRhymes.append("\(w["word"]!!)")
+                }
+                tempRhymes.shuffle()
+            } catch{
+                print("whoops, couldn't parse rhymes")
             }
-            tempRhymes.shuffle()
-        } catch{
-            print("whoops, couldn't parse rhymes")
         }
         
         return tempRhymes
