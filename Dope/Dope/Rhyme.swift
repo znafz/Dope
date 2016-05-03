@@ -37,6 +37,7 @@ class RhymeRepo{
     var words:[String]!
     var usedIndexes:[Int]!
     var currentIndex = 0
+    var currentRhyme = 0
     func populate(numberOfRhymes:Int){
         rhymes = []
         for _ in 0..<numberOfRhymes{
@@ -49,7 +50,7 @@ class RhymeRepo{
     }
     func getWord()->String{
         currentIndex += 1
-        return words[currentIndex-1]
+        return words[currentIndex-1 % words.count]
     }
     
     func getRhymes(word:String)->[String]{
@@ -61,11 +62,18 @@ class RhymeRepo{
             for w in parsedData{
                 tempRhymes.append("\(w["word"]!!)")
             }
+            tempRhymes.shuffle()
         } catch{
             print("whoops, couldn't parse rhymes")
         }
         
         return tempRhymes
+    }
+    
+    func nextRhyme()->Rhyme{
+        let rhyme = rhymes[currentRhyme]
+        currentRhyme += 1
+        return rhyme
     }
     init(){
         if let path = NSBundle.mainBundle().pathForResource("words", ofType: "txt"){

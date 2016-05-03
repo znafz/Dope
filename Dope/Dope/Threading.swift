@@ -5,7 +5,7 @@
 //  Copyright (c) 2014 iJoshSmith. All rights reserved.
 //
 
-//This code was found at https://github.com/ijoshsmith/swift-threading/blob/master/SwiftThreading/Threading.swift
+//This code based off https://github.com/ijoshsmith/swift-threading/blob/master/SwiftThreading/Threading.swift
 
 import Foundation
 

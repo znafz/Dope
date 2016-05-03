@@ -11,6 +11,33 @@ import R5Streaming
 
 class LiveBattleVC: UIViewController {
     
+    @IBOutlet weak var word:UIBarButtonItem!
+    @IBOutlet weak var rhymingWord:UIBarButtonItem!
+    @IBOutlet weak var handicapBar:UIToolbar!
+    var currentWord = 0
+    var rhyme:Rhyme!
+    @IBAction func handicap(){
+        if(handicapBar.hidden){
+            switchWords()
+            handicapBar.hidden = false
+        } else{
+            handicapBar.hidden = true
+        }
+        
+    }
+    
+    @IBAction func switchWords(){
+        rhyme = RhymeRepo.sharedInstance.nextRhyme()
+        word.title = rhyme.word
+        rhymingWord.title = rhyme.rhymingWords[0]
+        currentWord = 0
+    }
+    
+    @IBAction func changeWord(sender: UIBarButtonItem){
+        currentWord += 1
+        sender.title = rhyme.rhymingWords[currentWord % rhyme.rhymingWords.count]
+    }
+    
     @IBAction func quit(sender: UIButton) {
         dismissViewControllerAnimated(true, completion: nil)
     }
@@ -18,6 +45,8 @@ class LiveBattleVC: UIViewController {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        RhymeRepo.sharedInstance.populate(100)
+        handicapBar.hidden = true
 /*
         r5ViewController = Subscribe()
         

@@ -31,7 +31,6 @@
 		366F98F61CC94B73001FC2D5 /* tests.plist in Resources */ = {isa = PBXBuildFile; fileRef = 366F98F51CC94B73001FC2D5 /* tests.plist */; };
 		366F98F81CC94CC6001FC2D5 /* Publish.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366F98F71CC94CC6001FC2D5 /* Publish.swift */; };
 		712ED15FC6796F8903A0EF1C /* Pods_Dope.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68868F20CEB0A8646B2D2A97 /* Pods_Dope.framework */; };
-		9B4E144B1CC9B7300053D17F /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9B96444B1CC2973C00D4B5D7 /* Info.plist */; };
 		9B4E14521CC9B9450053D17F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B9644461CC2973C00D4B5D7 /* Assets.xcassets */; };
 		9B4E14531CC9B9450053D17F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B9644461CC2973C00D4B5D7 /* Assets.xcassets */; };
 		9B4E14561CC9B9DC0053D17F /* 08 Underground.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9B4E14541CC9B9D80053D17F /* 08 Underground.ttf */; };
@@ -54,6 +53,7 @@
 		9BA9275B1CC2B7AC0086D64E /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA9275A1CC2B7AC0086D64E /* CurrentUser.swift */; };
 		9BA9275D1CC2BD390086D64E /* FirebaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA9275C1CC2BD390086D64E /* FirebaseHelper.swift */; };
 		9BA9275F1CC2D1DE0086D64E /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA9275E1CC2D1DE0086D64E /* CreateAccountViewController.swift */; };
+		9BCEABD41CD7A81B00890123 /* wheelchair.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BCEABD31CD7A81B00890123 /* wheelchair.png */; };
 		9BE79DB41CC94CB400059C03 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE79DB31CC94CB400059C03 /* User.swift */; };
 		9BE79DB61CC9AA6600059C03 /* InitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE79DB51CC9AA6600059C03 /* InitViewController.swift */; };
 		9BE79DB81CC9AB4C00059C03 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE79DB71CC9AB4C00059C03 /* HomeViewController.swift */; };
@@ -129,6 +129,7 @@
 		9BA9275A1CC2B7AC0086D64E /* CurrentUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
 		9BA9275C1CC2BD390086D64E /* FirebaseHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseHelper.swift; sourceTree = "<group>"; };
 		9BA9275E1CC2D1DE0086D64E /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
+		9BCEABD31CD7A81B00890123 /* wheelchair.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wheelchair.png; sourceTree = SOURCE_ROOT; };
 		9BE79DB31CC94CB400059C03 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		9BE79DB51CC9AA6600059C03 /* InitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitViewController.swift; sourceTree = "<group>"; };
 		9BE79DB71CC9AB4C00059C03 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -291,6 +292,7 @@
 				3624CAAF1CC8F8AF00D53288 /* Foodini.png */,
 				3624CAA81CC8062B00D53288 /* Dope.entitlements */,
 				3624CA7F1CC800EE00D53288 /* ALToastView.h */,
+				9BCEABD31CD7A81B00890123 /* wheelchair.png */,
 				3624CA801CC800EE00D53288 /* ALToastView.m */,
 				3624CA7C1CC7DD9800D53288 /* Models */,
 				3624CA7B1CC7DD9300D53288 /* Views */,
@@ -457,7 +459,6 @@
 			files = (
 				3607F6ED1CD1466300C87D14 /* Images.xcassets in Resources */,
 				9B4E14581CC9BA890053D17F /* 08 Underground.ttf in Resources */,
-				9B4E144B1CC9B7300053D17F /* Info.plist in Resources */,
 				9B96444A1CC2973C00D4B5D7 /* LaunchScreen.storyboard in Resources */,
 				9B9644471CC2973C00D4B5D7 /* Assets.xcassets in Resources */,
 				3624CAB21CC90B4B00D53288 /* OverlayView.xib in Resources */,
@@ -465,6 +466,7 @@
 				366F98F61CC94B73001FC2D5 /* tests.plist in Resources */,
 				9B4E14A21CD6CE390053D17F /* words.txt in Resources */,
 				9B9644451CC2973C00D4B5D7 /* Main.storyboard in Resources */,
+				9BCEABD41CD7A81B00890123 /* wheelchair.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
