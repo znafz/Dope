@@ -27,7 +27,7 @@ class LiveBattleVC: UIViewController {
     }
     
     @IBAction func switchWords(){
-        rhyme = RhymeRepo.sharedInstance.nextRhyme()
+        rhyme = RhymeService.nextRhyme()
         word.title = rhyme.word
         rhymingWord.title = rhyme.rhymingWords[0]
         currentWord = 0
@@ -45,7 +45,7 @@ class LiveBattleVC: UIViewController {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        RhymeRepo.sharedInstance.populate(100)
+        RhymeService.populate(100)
         handicapBar.hidden = true
 /*
         r5ViewController = Subscribe()

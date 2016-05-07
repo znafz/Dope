@@ -8,17 +8,30 @@
 
 import Foundation
 
-class User{
+/// A user capable of participating in and viewing rap battles.
+class User: NSObject {
     var uid:String?
     var imageURL:String?
     var displayName:String?
     var numberOfBattles:Int?
     var numberOfWins:Int?
-    init(uid:String, imageURL:String, displayName:String, numberOfBattles:Int = 0, numberOfWins:Int = 0){
+    var minutesAgoLastSeen: Int
+    init(uid:String, imageURL:String, displayName:String, numberOfBattles:Int = 0, numberOfWins:Int = 0, minutesAgoLastSeen: Int = 0){
         self.uid = uid
         self.imageURL = imageURL
         self.displayName = displayName
         self.numberOfWins = numberOfWins
         self.numberOfBattles = numberOfBattles
+        self.minutesAgoLastSeen = minutesAgoLastSeen
     }
+}
+
+extension User: Comparable {}
+
+func == (x: User, y: User) -> Bool {
+    return (x.uid == y.uid)
+}
+
+func < (x: User, y: User) -> Bool {
+    return (x.minutesAgoLastSeen < y.minutesAgoLastSeen)
 }

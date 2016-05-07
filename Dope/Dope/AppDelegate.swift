@@ -17,6 +17,8 @@ class AppDelegate: FirebaseAppDelegate {
         // Override point for customization after application launch.
         _ = Stream.sharedInstance
         _ = Stream.dictionary
+        _ = RhymeService.sharedInstance
+        _ = MatchingService.sharedMatchingInstance
         PushServer.sharedInstance.server = OneSignal(launchOptions: launchOptions, appId: "bd07345d-ef11-4307-b129-d936a6810241", handleNotification: nil)
         PushServer.sharedInstance.server.enableInAppAlertNotification(true)
         return true

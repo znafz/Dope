@@ -21,15 +21,18 @@ class DopeTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
+    // Matching service
+    func test_addAvailable() {
+        let user1 = User(uid: "123", imageURL: "imgur.com", displayName: "user1", numberOfBattles: 0, numberOfWins: 0, minutesAgoLastSeen: 5)
+        let user2 = User(uid: "123", imageURL: "imgur.com", displayName: "user1", numberOfBattles: 0, numberOfWins: 0, minutesAgoLastSeen: 10)
+        let _ = MatchingService()
+        XCTAssert(MatchingService.addAvailable(user2) == 0)
+        XCTAssert(MatchingService.addAvailable(user1) == 0)
+        
+        let user3 = User(uid: "123", imageURL: "imgur.com", displayName: "user1", numberOfBattles: 0, numberOfWins: 0, minutesAgoLastSeen: 15)
         self.measureBlock {
             // Put the code you want to measure the time of here.
+            MatchingService.addAvailable(user3)
         }
     }
     

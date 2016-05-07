@@ -24,6 +24,9 @@
 		3624CAB81CC90BC200D53288 /* ExampleOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3624CAB51CC90BC200D53288 /* ExampleOverlayView.swift */; };
 		3624CAB91CC90BC200D53288 /* CustomKolodaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3624CAB61CC90BC200D53288 /* CustomKolodaView.swift */; };
 		3624CABA1CC90BC200D53288 /* CustomOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3624CAB71CC90BC200D53288 /* CustomOverlayView.swift */; };
+		366C4FE91CDE24FA00372DB2 /* MatchingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366C4FE81CDE24FA00372DB2 /* MatchingService.swift */; };
+		366C4FEA1CDE2CA100372DB2 /* R5Streaming.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3624CA821CC8037000D53288 /* R5Streaming.framework */; };
+		366C4FEC1CDE373C00372DB2 /* RhymeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366C4FEB1CDE373C00372DB2 /* RhymeService.swift */; };
 		366F98AF1CC92BBE001FC2D5 /* BaseStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366F98AE1CC92BBE001FC2D5 /* BaseStream.swift */; };
 		366F98ED1CC931B1001FC2D5 /* Stream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366F98EC1CC931B1001FC2D5 /* Stream.swift */; };
 		366F98F21CC93399001FC2D5 /* LiveBattleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366F98F11CC93399001FC2D5 /* LiveBattleVC.swift */; };
@@ -98,6 +101,8 @@
 		3624CAB51CC90BC200D53288 /* ExampleOverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleOverlayView.swift; sourceTree = "<group>"; };
 		3624CAB61CC90BC200D53288 /* CustomKolodaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomKolodaView.swift; sourceTree = "<group>"; };
 		3624CAB71CC90BC200D53288 /* CustomOverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomOverlayView.swift; sourceTree = "<group>"; };
+		366C4FE81CDE24FA00372DB2 /* MatchingService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchingService.swift; sourceTree = "<group>"; };
+		366C4FEB1CDE373C00372DB2 /* RhymeService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RhymeService.swift; sourceTree = "<group>"; };
 		366F98AE1CC92BBE001FC2D5 /* BaseStream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseStream.swift; sourceTree = "<group>"; };
 		366F98EC1CC931B1001FC2D5 /* Stream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stream.swift; sourceTree = "<group>"; };
 		366F98F11CC93399001FC2D5 /* LiveBattleVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveBattleVC.swift; sourceTree = "<group>"; };
@@ -157,6 +162,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				366C4FEA1CDE2CA100372DB2 /* R5Streaming.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,6 +182,8 @@
 				9BA9275C1CC2BD390086D64E /* FirebaseHelper.swift */,
 				366F98EC1CC931B1001FC2D5 /* Stream.swift */,
 				9B4E149D1CD6C83D0053D17F /* Threading.swift */,
+				366C4FE81CDE24FA00372DB2 /* MatchingService.swift */,
+				366C4FEB1CDE373C00372DB2 /* RhymeService.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -562,10 +570,12 @@
 				9BA9275B1CC2B7AC0086D64E /* CurrentUser.swift in Sources */,
 				9B9644401CC2973C00D4B5D7 /* AppDelegate.swift in Sources */,
 				3624CAB81CC90BC200D53288 /* ExampleOverlayView.swift in Sources */,
+				366C4FEC1CDE373C00372DB2 /* RhymeService.swift in Sources */,
 				3624CA741CC7DD5800D53288 /* BattlesTableVC.swift in Sources */,
 				366F98ED1CC931B1001FC2D5 /* Stream.swift in Sources */,
 				9B4E149E1CD6C83D0053D17F /* Threading.swift in Sources */,
 				3607F70F1CD26E9B00C87D14 /* BattleViewerVC.swift in Sources */,
+				366C4FE91CDE24FA00372DB2 /* MatchingService.swift in Sources */,
 				3624CA731CC7DD5800D53288 /* Battle.swift in Sources */,
 				9BE79DB41CC94CB400059C03 /* User.swift in Sources */,
 				3624CA751CC7DD5800D53288 /* WouldYouRapThatVC.swift in Sources */,
@@ -726,6 +736,24 @@
 				INFOPLIST_FILE = Dope/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-framework",
+					"\"Bolts\"",
+					"-framework",
+					"\"FBSDKCoreKit\"",
+					"-framework",
+					"\"FBSDKLoginKit\"",
+					"-framework",
+					"\"Firebase\"",
+					"-framework",
+					"\"FirebaseUI\"",
+					"-framework",
+					"\"Koloda\"",
+					"-framework",
+					"\"pop\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = edu.gcc.Dope;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -750,6 +778,24 @@
 				INFOPLIST_FILE = Dope/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-framework",
+					"\"Bolts\"",
+					"-framework",
+					"\"FBSDKCoreKit\"",
+					"-framework",
+					"\"FBSDKLoginKit\"",
+					"-framework",
+					"\"Firebase\"",
+					"-framework",
+					"\"FirebaseUI\"",
+					"-framework",
+					"\"Koloda\"",
+					"-framework",
+					"\"pop\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = edu.gcc.Dope;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -761,6 +807,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = DopeTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.gcc.DopeTests;
@@ -773,6 +823,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = DopeTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.gcc.DopeTests;
