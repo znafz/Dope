@@ -13,7 +13,6 @@ class MatchingService {
     
     // MARK: - Properties
     
-    typealias Match = (User, User)
     static let sharedMatchingInstance = MatchingService()
     
     /// List of users available for battle matching

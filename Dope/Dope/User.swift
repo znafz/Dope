@@ -24,6 +24,15 @@ class User: NSObject {
         self.numberOfBattles = numberOfBattles
         self.minutesAgoLastSeen = minutesAgoLastSeen
     }
+    
+    init(user: User) {
+        self.uid = user.uid
+        self.imageURL = user.imageURL
+        self.displayName = user.displayName
+        self.numberOfBattles = user.numberOfBattles
+        self.numberOfWins = user.numberOfWins
+        self.minutesAgoLastSeen = user.minutesAgoLastSeen
+    }
 }
 
 extension User: Comparable {}

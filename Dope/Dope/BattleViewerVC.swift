@@ -16,6 +16,10 @@ class BattleViewerVC: UIViewController {
         dismissViewControllerAnimated(true, completion: nil)
     }
     
+    // **************************************************************
+    // TODO: MAKE THIS CLASS A FIREBASEUI TABLE. It's so much easier.
+    // **************************************************************
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
