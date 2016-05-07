@@ -1,1 +1,5 @@
-../../../Firebase/FirebaseServerValue.h
+@interface FirebaseServerValue : NSObject
+
++ (NSDictionary *) timestamp;
+
+@end
