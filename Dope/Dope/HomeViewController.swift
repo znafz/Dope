@@ -11,7 +11,7 @@ import UIKit
 class HomeViewController: UITabBarController {
     
     @IBAction func logout(){
-        FirebaseHelper().logout()
+        FirebaseHelper.logout()
         performSegueWithIdentifier("logout", sender: self)
     }
 

@@ -14,7 +14,7 @@ class CreateAccountViewController: UIViewController {
     @IBOutlet weak var passwordField:UITextField!
     @IBAction func create(){
         if let name = nameField.text, email = emailField.text, password = passwordField.text{
-            FirebaseHelper().createUser(email, password: password, displayName: name, completionHandler: {success in
+            FirebaseHelper.createUser(email, password: password, displayName: name, completionHandler: {success in
                 if(success){
                     self.navigationController?.popViewControllerAnimated(true)
                 }

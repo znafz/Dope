@@ -7,16 +7,20 @@
 //
 
 import Foundation
+import Firebase
 
 /// A service for matching users into rap battles.
-class MatchingService {
+class MatchingService: NSObject {
     
     // MARK: - Properties
+    static private let MAX_QUERY = 100
+    static private let baseRef = Firebase(url:"https://popping-inferno-6138.firebaseio.com")
+    static private let usersRef = Firebase(url:"https://popping-inferno-6138.firebaseio.com/users")
     
     static let sharedMatchingInstance = MatchingService()
     
     /// List of users available for battle matching
-    static private var available: [User] = []
+    static var available: [User] = []
     
     /// List of confirmed matches ready for battle
     static private var matches: [Match] = []
@@ -28,9 +32,14 @@ class MatchingService {
      Adds a user that is available for battling and sorts the list of users by lowest minutesAgoLastSeen.
      - parameter user: The `User` object to add.
      - returns: If `user` was added, returns the index of said user after the list has been sorted.
+                If the `user` wasn't added, returns -1.
     */
     static func addAvailable(user: User) -> Int? {
-        available.append(user)
+        if !available.contains(user) {
+            available.append(user)
+        } else {
+            return -1
+        }
         // In order for accessing the last online user to remain a constant time operation,
         //   we must sort this list by lowest minutesAgoLastSeen.
         available.sortInPlace()
@@ -57,7 +66,16 @@ class MatchingService {
      - returns: If `match` was added, returns the index of said `Match`
     */
     static func addMatch(match: Match) -> Int? {
-        matches.append(match)
+        if !matches.contains({ (a: User, b: User) -> Bool in
+            if ((match.0 == a && match.1 == b) ||
+                (match.1 == a && match.0 == b)) {
+                return true
+            } else {
+                return false
+            }
+        }) {
+            matches.append(match)
+        }
         return matches.indexOf({ (a: User, b: User) -> Bool in
             if ((match.0 == a && match.1 == b) ||
                 (match.1 == a && match.0 == b)) {
@@ -108,6 +126,64 @@ class MatchingService {
             print(error)
         }
         return match
+    }
+    
+    /**
+     Fetches new users that are available and adds them to `MatchingService.availability`.
+     - parameter qty: The number of users to search for, limited by the constant `MAX_QUERY`.
+    */
+    static func fetchAvailable(qty: Int) {
+        let limit = qty % MAX_QUERY
+        usersRef.queryOrderedByChild("online")
+            .queryEqualToValue(true)
+            .queryLimitedToFirst(UInt(limit))
+            .observeEventType(.Value, withBlock: { snapshot in
+                for child in snapshot.children {
+                    let child = child as! FDataSnapshot
+                    let uid = child.key
+                    let dName = child.value.objectForKey("display_name") as! String
+                    let image = child.value.objectForKey("image_url") as! String
+                    let numBattles = child.value.objectForKey("number_of_battles") as! Int
+                    let numWins = child.value.objectForKey("number_of_wins") as! Int
+                    let new = User(uid: uid, imageURL: image, displayName: dName, numberOfBattles: numBattles, numberOfWins: numWins)
+                    self.addAvailable(new)
+                }
+        })
+    }
+    
+    /// When a Firebase user is modified, this method is triggered.
+    static func startUpdating() {
+        usersRef.queryOrderedByChild("online").observeEventType(.ChildChanged, withBlock: { snapshot in
+            let uid = snapshot.key
+            let image = snapshot.value.objectForKey("image_url") as! String
+            let dName = snapshot.value.objectForKey("display_name") as! String
+            let numBattles = snapshot.value.objectForKey("number_of_battles") as! Int
+            let numWins = snapshot.value.objectForKey("number_of_wins") as! Int
+            let updated = User(uid: uid, imageURL: image, displayName: dName, numberOfBattles: numBattles, numberOfWins: numWins)
+            if let online = snapshot.value.objectForKey("online") as? Bool {
+                if !online {
+                    do {
+                        try self.removeAvailable(updated)
+                    } catch {
+                        print(error)
+                    }
+                } else {
+                    self.addAvailable(updated)
+                }
+            }
+            
+        })
+    }
+    
+    /// Retrieves a list of the locations of all available users' images.
+    static func getImageURLs() -> [String] {
+        var URLs: [String] = []
+        for user in available {
+            if let url = user.imageURL {
+                URLs.append(url)
+            }
+        }
+        return URLs
     }
     
 }

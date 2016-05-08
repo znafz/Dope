@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Contestant {
+class Contestant: NSObject {
     let user: User
     var aid: Bool
     var votes: Int
@@ -20,4 +20,14 @@ class Contestant {
         self.votes = votes
         self.stream = user.uid
     }
+}
+
+extension Contestant: Comparable {}
+
+func == (x: Contestant, y: Contestant) -> Bool {
+    return (x.user == y.user)
+}
+
+func < (x: Contestant, y: Contestant) -> Bool {
+    return (x.user < y.user)
 }

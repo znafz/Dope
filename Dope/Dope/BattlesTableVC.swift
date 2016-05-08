@@ -13,6 +13,8 @@ import FirebaseUI
 class BattlesTableVC: UITableViewController {
     
     var dataSource = FirebaseTableViewDataSource()
+    let battleController = BattleController()
+    var selected: Battle!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,14 +29,17 @@ class BattlesTableVC: UITableViewController {
         
         self.dataSource.populateCellWithBlock { (cell: UITableViewCell, obj: NSObject) -> Void in
             let snap = obj as! FDataSnapshot // Force cast to an FDataSnapshot
-            print(snap.value)
-            let battle = snap.value
+            let battleObject = snap.value
+            let uid = snap.key
             var instigator:User!
             var opponent:User!
-            FirebaseHelper().getUser(battle.valueForKey("instigator") as! String, completionHandler: {inst in
+            FirebaseHelper.getUser(battleObject.valueForKey("instigator") as! String, completionHandler: {inst in
                 instigator = inst
-                FirebaseHelper().getUser(battle.valueForKey("opponent") as! String, completionHandler: {opp in
+                FirebaseHelper.getUser(battleObject.valueForKey("opponent") as! String, completionHandler: {opp in
                     opponent = opp
+                    let match = (instigator, opponent) as Match
+                    let battle = Battle(uid: uid, match: match)
+                    self.battleController.addBattle(battle)
                     cell.textLabel!.text = "\(instigator.displayName!) vs. \(opponent.displayName!)"
                 })
                 
@@ -64,13 +69,23 @@ class BattlesTableVC: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        Stream.setStream1Name("desktop")
-        Stream.setStream2Name("laptop")
-        performSegueWithIdentifier("battleViewerSegue", sender: self)
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        let cell = tableView.cellForRowAtIndexPath(indexPath)
+        let splitSequence = cell!.textLabel!.text!.componentsSeparatedByString(" vs. ")
+        let player1 = splitSequence[0]
+        let player2 = splitSequence[1]
+        if let battle = battleController.getBattle(with: player1, and: player2) {
+            battleController.viewBattle(battle)
+            performSegueWithIdentifier("battleViewerSegue", sender: self)
+        } else {
+            print("Battle not found with contestants \(player1) and \(player2)")
+        }
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        //let dest = segue.destinationViewController
+        let dest = segue.destinationViewController as! BattleViewerVC
+        dest.battle = selected
+        dest.battleController = battleController
     }
 
 }

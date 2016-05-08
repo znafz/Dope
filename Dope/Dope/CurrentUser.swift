@@ -8,16 +8,16 @@
 
 import Foundation
 
-class CurrentUser{
+class CurrentUser: NSObject {
     static let sharedInstance = CurrentUser()
-    var uid:String?
-    var email:String?
-    var token:String?
-    var imageURL:String?
-    var displayName:String?
-    var numberOfBattles:Int?
-    var numberOfWins:Int?
-    func login(uid:String, email:String, token:String, imageURL:String, displayName:String, numberOfBattles:Int = 0, numberOfWins:Int = 0){
+    static var uid:String?
+    static var email:String?
+    static var token:String?
+    static var imageURL:String?
+    static var displayName:String?
+    static var numberOfBattles:Int?
+    static var numberOfWins:Int?
+    static func login(uid:String, email:String, token:String, imageURL:String, displayName:String, numberOfBattles:Int = 0, numberOfWins:Int = 0){
         self.uid = uid
         self.email = email
         self.token = token

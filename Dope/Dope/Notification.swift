@@ -8,11 +8,11 @@
 
 import Foundation
 
-class Notification{
+class Notification: NSObject {
     var message:String!
     var recipientId:String!
     func push(){
-        let ref = FirebaseHelper().usersRef.childByAppendingPath(recipientId)
+        let ref = FirebaseHelper.usersRef.childByAppendingPath(recipientId)
         ref.observeSingleEventOfType(.Value, withBlock: {
             snapshot in
             if let pushID = snapshot.value.objectForKey("one_signal_id"){

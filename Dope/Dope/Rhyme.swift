@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Rhyme {
+class Rhyme: NSObject {
     var word:String!
     var rhymingWords:[String]!
     init(word:String, rhymingWords:[String]){

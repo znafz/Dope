@@ -33,11 +33,11 @@ class LoginViewController: UIViewController {
         loginViewController.didDismissWithBlock { (user: FAuthData!, error: NSError!) -> Void in
             if (user != nil) {
                 // Handle user case
-                FirebaseHelper().login(user, completionHandler: { success in
+                FirebaseHelper.login(user, completionHandler: { success in
                     if(success){
                         self.performSegueWithIdentifier("loginSuccessSegue", sender: self)
                     } else{
-                        FirebaseHelper().logout()
+                        FirebaseHelper.logout()
                     }
                 })
                 

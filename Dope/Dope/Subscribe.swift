@@ -10,13 +10,13 @@ import UIKit
 import R5Streaming
 
 class Subscribe: BaseStream {
-    
-    let ip = "10.22.102.182"
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupDefaultR5VideoViewController()
-        
+    }
+    
+    func play() {
         let config = getConfig()
         // Set up the connection and stream
         let connection = R5Connection(config: config)

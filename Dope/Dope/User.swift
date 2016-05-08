@@ -15,7 +15,8 @@ class User: NSObject {
     var displayName:String?
     var numberOfBattles:Int?
     var numberOfWins:Int?
-    var minutesAgoLastSeen: Int
+    dynamic var minutesAgoLastSeen: Int = 0
+    
     init(uid:String, imageURL:String, displayName:String, numberOfBattles:Int = 0, numberOfWins:Int = 0, minutesAgoLastSeen: Int = 0){
         self.uid = uid
         self.imageURL = imageURL

@@ -15,10 +15,14 @@ class AppDelegate: FirebaseAppDelegate {
     override func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
         // Override point for customization after application launch.
+        _ = CurrentUser.sharedInstance
+        _ = FirebaseHelper.sharedInstance
         _ = Stream.sharedInstance
         _ = Stream.dictionary
         _ = RhymeService.sharedInstance
         _ = MatchingService.sharedMatchingInstance
+        MatchingService.startUpdating()
+        
         PushServer.sharedInstance.server = OneSignal(launchOptions: launchOptions, appId: "bd07345d-ef11-4307-b129-d936a6810241", handleNotification: nil)
         PushServer.sharedInstance.server.enableInAppAlertNotification(true)
         return true
@@ -32,12 +36,16 @@ class AppDelegate: FirebaseAppDelegate {
     override func applicationDidEnterBackground(application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-        FirebaseHelper().setOffline()
+        Stream.setAudio(false)
+        Stream.setVideo(false)
+        FirebaseHelper.setOffline()
     }
 
     override func applicationWillEnterForeground(application: UIApplication) {
         // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
-        FirebaseHelper().setOnline()
+        Stream.setAudio(true)
+        Stream.setVideo(true)
+        FirebaseHelper.setOnline()
     }
 
     override func applicationDidBecomeActive(application: UIApplication) {

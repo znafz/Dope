@@ -11,6 +11,7 @@ import R5Streaming
 
 class LiveBattleVC: UIViewController {
     
+    @IBOutlet weak var streamView: UIView!
     @IBOutlet weak var word:UIBarButtonItem!
     @IBOutlet weak var rhymingWord:UIBarButtonItem!
     @IBOutlet weak var handicapBar:UIToolbar!
@@ -47,14 +48,6 @@ class LiveBattleVC: UIViewController {
         super.viewDidLoad()
         RhymeService.populate(100)
         handicapBar.hidden = true
-/*
-        r5ViewController = Subscribe()
-        
-        self.addChildViewController(r5ViewController!)
-        self.view.addSubview(r5ViewController!.view)
-        
-        r5ViewController!.view.autoresizesSubviews = true
-        r5ViewController!.view.autoresizingMask = [UIViewAutoresizing.FlexibleHeight, UIViewAutoresizing.FlexibleWidth];*/
     }
 
     override func didReceiveMemoryWarning() {
@@ -65,15 +58,5 @@ class LiveBattleVC: UIViewController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

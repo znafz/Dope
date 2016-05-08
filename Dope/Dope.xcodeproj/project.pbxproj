@@ -29,6 +29,7 @@
 		366C4FEC1CDE373C00372DB2 /* RhymeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366C4FEB1CDE373C00372DB2 /* RhymeService.swift */; };
 		366C4FEE1CDE5D0A00372DB2 /* Contestant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366C4FED1CDE5D0A00372DB2 /* Contestant.swift */; };
 		366C4FF01CDE60CB00372DB2 /* BattleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366C4FEF1CDE60CB00372DB2 /* BattleController.swift */; };
+		366C4FF21CDFF91600372DB2 /* ImageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366C4FF11CDFF91500372DB2 /* ImageController.swift */; };
 		366F98AF1CC92BBE001FC2D5 /* BaseStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366F98AE1CC92BBE001FC2D5 /* BaseStream.swift */; };
 		366F98ED1CC931B1001FC2D5 /* Stream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366F98EC1CC931B1001FC2D5 /* Stream.swift */; };
 		366F98F21CC93399001FC2D5 /* LiveBattleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366F98F11CC93399001FC2D5 /* LiveBattleVC.swift */; };
@@ -107,6 +108,7 @@
 		366C4FEB1CDE373C00372DB2 /* RhymeService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RhymeService.swift; sourceTree = "<group>"; };
 		366C4FED1CDE5D0A00372DB2 /* Contestant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contestant.swift; sourceTree = "<group>"; };
 		366C4FEF1CDE60CB00372DB2 /* BattleController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BattleController.swift; sourceTree = "<group>"; };
+		366C4FF11CDFF91500372DB2 /* ImageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageController.swift; sourceTree = "<group>"; };
 		366F98AE1CC92BBE001FC2D5 /* BaseStream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseStream.swift; sourceTree = "<group>"; };
 		366F98EC1CC931B1001FC2D5 /* Stream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stream.swift; sourceTree = "<group>"; };
 		366F98F11CC93399001FC2D5 /* LiveBattleVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveBattleVC.swift; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 				366C4FE81CDE24FA00372DB2 /* MatchingService.swift */,
 				366C4FEB1CDE373C00372DB2 /* RhymeService.swift */,
 				366C4FEF1CDE60CB00372DB2 /* BattleController.swift */,
+				366C4FF11CDFF91500372DB2 /* ImageController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -563,6 +566,7 @@
 				366F98F81CC94CC6001FC2D5 /* Publish.swift in Sources */,
 				9BE79DB81CC9AB4C00059C03 /* HomeViewController.swift in Sources */,
 				366F98AF1CC92BBE001FC2D5 /* BaseStream.swift in Sources */,
+				366C4FF21CDFF91600372DB2 /* ImageController.swift in Sources */,
 				366C4FEE1CDE5D0A00372DB2 /* Contestant.swift in Sources */,
 				3624CAB91CC90BC200D53288 /* CustomKolodaView.swift in Sources */,
 				9B4E14981CD26B550053D17F /* Notification.swift in Sources */,

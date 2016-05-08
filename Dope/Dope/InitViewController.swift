@@ -16,7 +16,7 @@ class InitViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        FirebaseHelper().checkLoginState({loggedIn in
+        FirebaseHelper.checkLoginState({loggedIn in
             if(loggedIn){
                 self.performSegueWithIdentifier("homeSegue", sender: self)
             } else{

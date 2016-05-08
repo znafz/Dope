@@ -11,19 +11,25 @@ import UIKit
 class BattleViewerVC: UIViewController {
 
     @IBOutlet weak var str1: UIView!
+    @IBOutlet weak var currentPlayer: UILabel!
+    
+    var battle: Battle!
+    var battleController: BattleController!
     
     @IBAction func quit(sender: UIButton) {
         dismissViewControllerAnimated(true, completion: nil)
     }
     
-    // **************************************************************
-    // TODO: MAKE THIS CLASS A FIREBASEUI TABLE. It's so much easier.
-    // **************************************************************
+    @IBAction func nope(sender: UIButton) {
+        
+    }
+    
+    @IBAction func dope(sender: UIButton) {
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {

@@ -11,17 +11,15 @@ import R5Streaming
 
 class Publish: BaseStream {
     
-    let streamName = "phone"
+    let streamName = CurrentUser.uid! as String
     
     override func viewDidLoad() {
         super.viewDidLoad()
         Stream.setStream2Name(streamName)
     }
-
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
-        AVAudioSession.sharedInstance().requestRecordPermission { (gotPerm: Bool) -> Void in
-        };
+    
+    func publish() {
+        AVAudioSession.sharedInstance().requestRecordPermission { (success: Bool) in }
         setupDefaultR5VideoViewController()
         
         // Set up the configuration

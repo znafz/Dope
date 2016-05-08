@@ -9,8 +9,6 @@
 import UIKit
 import Koloda
 
-private var numberOfCards = 5
-
 class WouldYouRapThatVC: UIViewController {
 
     @IBOutlet weak var cards: KolodaView!
@@ -18,20 +16,21 @@ class WouldYouRapThatVC: UIViewController {
     @IBOutlet weak var skipButton: UIButton!
     @IBOutlet weak var likeButton: UIButton!
     
-    private var dataSource: Array<UIImage> = {
-        var array: Array<UIImage> = []
-        for index in 0..<numberOfCards {
-            array.append(UIImage(named: "Foodini.png")!)
-        }
-        
-        return array
-    }()
+    private var dataSource: Array<UIImage> = setDataSource()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         cards.dataSource = self
         cards.delegate = self
-        
+        MatchingService.fetchAvailable(3)
+        MatchingService.addObserver(self, forKeyPath: "available", options: .New, context: nil)
+    }
+    
+    override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
+        if let newValue = change?[NSKeyValueChangeNewKey] {
+            let newValue = newValue as! UIImage
+            dataSource.append(newValue)
+        }
     }
 
     /*
@@ -88,5 +87,37 @@ extension WouldYouRapThatVC: KolodaViewDataSource {
     
     func koloda(koloda: KolodaView, viewForCardOverlayAtIndex index: UInt) -> OverlayView? {
         return NSBundle.mainBundle().loadNibNamed("OverlayView", owner: self, options: nil)[0] as? OverlayView
+    }
+}
+
+func setDataSource() -> Array<UIImage> {
+    var array: Array<UIImage> = []
+    let urls: [String] = MatchingService.getImageURLs()
+    for url in urls {
+        downloadImage(NSURL(string: url)!) { img in
+            dispatch_async(dispatch_get_main_queue()) {
+                array.append(img)
+            }
+        }
+    }
+    return array
+}
+
+func getDataFromUrl(url: NSURL, completion: ((data: NSData?, response: NSURLResponse?, error: NSError? ) -> Void)) {
+    NSURLSession.sharedSession().dataTaskWithURL(url) { (data, response, error) in
+        completion(data: data, response: response, error: error)
+    }.resume()
+}
+
+func downloadImage(url: NSURL, completion: UIImage -> Void) {
+    print("Download Started")
+    print("lastPathComponent: " + (url.lastPathComponent ?? ""))
+    getDataFromUrl(url) { (data, response, error) in
+        dispatch_async(dispatch_get_main_queue()) {
+            guard let data = data where error == nil else { return }
+            print(response?.suggestedFilename ?? "")
+            print("Download Finished")
+            completion(UIImage(data: data)!)
+        }
     }
 }
