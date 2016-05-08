@@ -21,6 +21,18 @@ class FirebaseHelper{
         }
     }
     
+    //Gets online users. Calls the completion handler separately for each user.
+    func getOnlineUsers(completionHandler:(User)->Void){
+        let ref = self.usersRef
+        ref.queryOrderedByChild("online").queryEqualToValue(true).observeEventType(.ChildAdded, withBlock: { snapshot in
+            let image = snapshot.value.objectForKey("image_url") as! String
+            let dName = snapshot.value.objectForKey("display_name") as! String
+            completionHandler(User(uid: snapshot.key, imageURL: image, displayName: dName))
+        })
+        
+        
+    }
+    
     func getUser(uid:String, completionHandler:(User)->(Void)){
         let ref = self.usersRef.childByAppendingPath(uid)
         ref.observeSingleEventOfType(.Value, withBlock: {

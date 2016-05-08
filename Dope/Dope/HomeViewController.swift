@@ -20,6 +20,7 @@ class HomeViewController: UITabBarController {
         self.navigationController?.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "08 Underground", size: 28)!,  NSForegroundColorAttributeName: UIColor.blackColor()]
         self.navigationController?.navigationBarHidden = false
         
+        FirebaseHelper().getOnlineUsers({user in (print(user.displayName))})
         // Do any additional setup after loading the view.
     }
 
