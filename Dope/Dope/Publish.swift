@@ -16,6 +16,7 @@ class Publish: BaseStream {
     override func viewDidLoad() {
         super.viewDidLoad()
         Stream.setStream2Name(streamName)
+        publish()
     }
     
     func publish() {

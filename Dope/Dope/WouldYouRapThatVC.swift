@@ -10,71 +10,57 @@ import UIKit
 import Koloda
 
 class WouldYouRapThatVC: UIViewController {
+    
+    // MARK: - Properties & Outlets
 
     @IBOutlet weak var cards: KolodaView!
-    @IBOutlet weak var buttonView: UIView!
-    @IBOutlet weak var skipButton: UIButton!
-    @IBOutlet weak var likeButton: UIButton!
+    @IBOutlet weak var displayName: UILabel!
+    @IBOutlet weak var ratio: UILabel!
     
-    private var dataSource: Array<UIImage> = setDataSource()
+    var dataSource: Array<(User, UIImage)> = []
+    
+    // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         cards.dataSource = self
         cards.delegate = self
-        MatchingService.fetchAvailable(3)
-        MatchingService.addObserver(self, forKeyPath: "available", options: .New, context: nil)
-    }
-    
-    override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
-        if let newValue = change?[NSKeyValueChangeNewKey] {
-            let newValue = newValue as! UIImage
-            dataSource.append(newValue)
+        MatchingService.fetchAvailable(10) { user in
+            MatchingService.getImage(user) { image in
+                self.dataSource.append((user, image))
+                self.cards.reloadData()
+            }
         }
-    }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-    
-    //MARK: IBActions
-    @IBAction func leftButtonTapped() {
-        skipButton.imageView?.image = UIImage(named: "btn_skip_pressed")
-        cards.swipe(SwipeResultDirection.Left)
-    }
-    
-    @IBAction func rightButtonTapped() {
-        likeButton.imageView?.image = UIImage(named: "btn_like_pressed")
-        cards.swipe(SwipeResultDirection.Right)
     }
 
 }
 
-//MARK: KolodaViewDelegate
+
+// MARK: - KolodaViewDelegate
+
 extension WouldYouRapThatVC: KolodaViewDelegate {
     
     func kolodaDidRunOutOfCards(koloda: KolodaView) {
-        dataSource.insert(UIImage(named: "Foodini.png")!, atIndex: cards.currentCardIndex - 1)
+        MatchingService.fetchAvailable(10) { user in
+            MatchingService.getImage(user) { image in
+                self.dataSource.insert((user, image), atIndex: (self.cards.currentCardIndex - 1))
+                self.cards.reloadData()
+            }
+        }
         let position = cards.currentCardIndex
         cards.insertCardAtIndexRange(position...position, animated: true)
     }
     
     func koloda(koloda: KolodaView, didSwipeCardAtIndex index: UInt, inDirection direction: SwipeResultDirection) {
-        // TODO: Check for match here.
+        /// TODO: Check for match here.
         // If there is a match, open a new rap battle and begin broadcasting!
-        Stream.setStream2Name("laptop")
-        Stream.setStream1Name("phone")
+        MatchingService.swipeRight(self.dataSource[0].0)
         performSegueWithIdentifier("rapBattleLiveSegue", sender: self)
     }
 }
 
-//MARK: KolodaViewDataSource
+
+// MARK: - KolodaViewDataSource
 extension WouldYouRapThatVC: KolodaViewDataSource {
     
     func kolodaNumberOfCards(koloda:KolodaView) -> UInt {
@@ -82,7 +68,7 @@ extension WouldYouRapThatVC: KolodaViewDataSource {
     }
     
     func koloda(koloda: KolodaView, viewForCardAtIndex index: UInt) -> UIView {
-        return UIImageView(image: dataSource[Int(index)])
+        return UIImageView(image: dataSource[Int(index)].1)
     }
     
     func koloda(koloda: KolodaView, viewForCardOverlayAtIndex index: UInt) -> OverlayView? {
@@ -90,34 +76,4 @@ extension WouldYouRapThatVC: KolodaViewDataSource {
     }
 }
 
-func setDataSource() -> Array<UIImage> {
-    var array: Array<UIImage> = []
-    let urls: [String] = MatchingService.getImageURLs()
-    for url in urls {
-        downloadImage(NSURL(string: url)!) { img in
-            dispatch_async(dispatch_get_main_queue()) {
-                array.append(img)
-            }
-        }
-    }
-    return array
-}
 
-func getDataFromUrl(url: NSURL, completion: ((data: NSData?, response: NSURLResponse?, error: NSError? ) -> Void)) {
-    NSURLSession.sharedSession().dataTaskWithURL(url) { (data, response, error) in
-        completion(data: data, response: response, error: error)
-    }.resume()
-}
-
-func downloadImage(url: NSURL, completion: UIImage -> Void) {
-    print("Download Started")
-    print("lastPathComponent: " + (url.lastPathComponent ?? ""))
-    getDataFromUrl(url) { (data, response, error) in
-        dispatch_async(dispatch_get_main_queue()) {
-            guard let data = data where error == nil else { return }
-            print(response?.suggestedFilename ?? "")
-            print("Download Finished")
-            completion(UIImage(data: data)!)
-        }
-    }
-}

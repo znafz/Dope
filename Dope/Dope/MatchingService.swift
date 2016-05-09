@@ -32,13 +32,13 @@ class MatchingService: NSObject {
      Adds a user that is available for battling and sorts the list of users by lowest minutesAgoLastSeen.
      - parameter user: The `User` object to add.
      - returns: If `user` was added, returns the index of said user after the list has been sorted.
-                If the `user` wasn't added, returns -1.
+                If the `user` wasn't added, returns nil.
     */
     static func addAvailable(user: User) -> Int? {
         if !available.contains(user) {
             available.append(user)
         } else {
-            return -1
+            return nil
         }
         // In order for accessing the last online user to remain a constant time operation,
         //   we must sort this list by lowest minutesAgoLastSeen.
@@ -50,14 +50,13 @@ class MatchingService: NSObject {
     /**
      If the given user is available, removes the user from the availability list.
      - parameter user: The user to remove availability for
-     - throws: `MatchingError.NotInAvailableList` if `user` does not exist in `available`
      - returns: The removed `User` object
     */
-    static func removeAvailable(user: User) throws -> User {
+    static func removeAvailable(user: User) -> User? {
         if let index = available.indexOf(user) {
             return available.removeAtIndex(index)
         }
-        throw MatchingError.NotInAvailableList
+        return nil
     }
     
     /**
@@ -108,31 +107,25 @@ class MatchingService: NSObject {
     
     /**
      Matches two `User`s together and prepares them for a rap battle.
-     - Parameters:
-        - a: `User` to match
-        - b: `User` to match
-     - throws: `MatchingError.SameUser` if `a` and `b` are equal
-     - returns: The new `Match` ready for battle
+     - Parameter user: The `User` to check a match against
+     - throws: 
+         `MatchingError.SameUser` if self and `user` are equal
+         `MatchingError.NoMatch` if there is no match with `user`
+     - returns: If there is a match, the new `Match` ready for battle. 
+                Otherwise nil.
     */
-    static func match(a: User, b: User) throws -> Match {
-        guard a != b else { throw MatchingError.SameUser }
-        var match: Match! = nil
-        do {
-            let a = try removeAvailable(a)
-            let b = try removeAvailable(b)
-            match = (a, b)
-            addMatch(match)
-        } catch {
-            print(error)
-        }
-        return match
+    static func checkMatch(user: User) throws -> Int? {
+        guard CurrentUser.uid != user.uid else { throw MatchingError.SameUser }
+        let matchedUser = removeAvailable(user)
+        let match = (CurrentUser.user(), matchedUser!)
+        return addMatch(match)
     }
     
     /**
      Fetches new users that are available and adds them to `MatchingService.availability`.
      - parameter qty: The number of users to search for, limited by the constant `MAX_QUERY`.
     */
-    static func fetchAvailable(qty: Int) {
+    static func fetchAvailable(qty: Int, completion: User -> Void) {
         let limit = qty % MAX_QUERY
         usersRef.queryOrderedByChild("online")
             .queryEqualToValue(true)
@@ -146,7 +139,10 @@ class MatchingService: NSObject {
                     let numBattles = child.value.objectForKey("number_of_battles") as! Int
                     let numWins = child.value.objectForKey("number_of_wins") as! Int
                     let new = User(uid: uid, imageURL: image, displayName: dName, numberOfBattles: numBattles, numberOfWins: numWins)
-                    self.addAvailable(new)
+                    let index = self.addAvailable(new)
+                    if let index = index {
+                        completion(self.available[index])
+                    }
                 }
         })
     }
@@ -162,28 +158,67 @@ class MatchingService: NSObject {
             let updated = User(uid: uid, imageURL: image, displayName: dName, numberOfBattles: numBattles, numberOfWins: numWins)
             if let online = snapshot.value.objectForKey("online") as? Bool {
                 if !online {
-                    do {
-                        try self.removeAvailable(updated)
-                    } catch {
-                        print(error)
-                    }
+                    self.removeAvailable(updated)
                 } else {
                     self.addAvailable(updated)
                 }
             }
-            
         })
     }
     
-    /// Retrieves a list of the locations of all available users' images.
-    static func getImageURLs() -> [String] {
-        var URLs: [String] = []
+    static func startUpdatingSwipes() {
+        
+    }
+    
+    static func swipeRight(user: User) {
+        let uid = user.uid
+        let myUID = CurrentUser.uid!
+        let ref = usersRef.childByAppendingPath(uid)
+        let newValue: [NSObject : AnyObject]! = ["swiped": myUID]
+        ref.updateChildValues(newValue)
+    }
+    
+    /**
+     Retrieves a list of the locations of all available users' images.
+     - parameter completion: A closure that takes an image. Use this to handle returned images.
+    */
+    static func getImages(completion: UIImage -> Void) {
         for user in available {
             if let url = user.imageURL {
-                URLs.append(url)
+                downloadImage(url) { image in
+                    completion(image)
+                }
             }
         }
-        return URLs
+    }
+    
+    /**
+     Retrieves an image for the provided user.
+     - parameter user: The user for which an image is retrieved
+     - parameter completion: A closure that takes an image. Use this to handle the returned image.
+    */
+    static func getImage(user: User, completion: UIImage -> Void) {
+        if let url = user.imageURL {
+            downloadImage(url) { image in
+                completion(image)
+            }
+        }
+    }
+    
+    static private func getDataFromUrl(url: NSURL, completion: ((data: NSData?, response: NSURLResponse?, error: NSError? ) -> Void)) {
+        NSURLSession.sharedSession().dataTaskWithURL(url) { (data, response, error) in
+            completion(data: data, response: response, error: error)
+        }.resume()
+    }
+    
+    static private func downloadImage(url: String, completion: UIImage -> Void) {
+        let url = NSURL(string: url)!
+        getDataFromUrl(url) { (data, response, error) in
+            dispatch_async(dispatch_get_main_queue()) {
+                guard let data = data where error == nil else { return }
+                completion(UIImage(data: data)!)
+            }
+        }
     }
     
 }
@@ -191,6 +226,7 @@ class MatchingService: NSObject {
 enum MatchingError: ErrorType {
     case SameUser
     case NotInAvailableList
+    case NoMatch
 }
     
 extension MatchingError: CustomStringConvertible {
@@ -200,6 +236,8 @@ extension MatchingError: CustomStringConvertible {
             return "A user cannot be matched with himself"
         case .NotInAvailableList:
             return "The specified item to remove does not exist."
+        case .NoMatch:
+            return "No match."
         }
     }
 }

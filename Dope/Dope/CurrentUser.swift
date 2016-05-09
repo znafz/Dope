@@ -26,4 +26,8 @@ class CurrentUser: NSObject {
         self.numberOfWins = numberOfWins
         self.numberOfBattles = numberOfBattles
     }
+    
+    static func user() -> User {
+        return User(uid: uid!, imageURL: imageURL!, displayName: displayName!, numberOfBattles: numberOfBattles!, numberOfWins: numberOfWins!)
+    }
 }

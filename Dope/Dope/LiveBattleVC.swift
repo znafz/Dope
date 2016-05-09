@@ -11,12 +11,42 @@ import R5Streaming
 
 class LiveBattleVC: UIViewController {
     
+    // MARK: - Properties & Outlets
+    
     @IBOutlet weak var streamView: UIView!
     @IBOutlet weak var word:UIBarButtonItem!
     @IBOutlet weak var rhymingWord:UIBarButtonItem!
     @IBOutlet weak var handicapBar:UIToolbar!
+    @IBOutlet weak var nextPair: UIBarButtonItem!
+    
     var currentWord = 0
     var rhyme:Rhyme!
+    
+    
+    // MARK: - Lifecycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        RhymeService.populate(100)
+        handicapBar.hidden = true
+        
+        word.title = "Word"
+        nextPair.title = "Next Pair"
+        rhymingWord.title = "Rhyming Word"
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+    }
+    
+    
+    // MARK: - Action Methods
+    
     @IBAction func handicap(){
         if(handicapBar.hidden){
             switchWords()
@@ -43,20 +73,5 @@ class LiveBattleVC: UIViewController {
         dismissViewControllerAnimated(true, completion: nil)
     }
     
-    // MARK: - Lifecycle
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        RhymeService.populate(100)
-        handicapBar.hidden = true
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
-    }
 
 }
