@@ -22,6 +22,18 @@ class FirebaseHelper {
         }
     }
     
+    /// Gets online users. Calls the completion handler separately for each user.
+    static func getOnlineUsers(completionHandler: User -> Void) {
+        let ref = self.usersRef
+        ref.queryOrderedByChild("online").queryEqualToValue(true).observeEventType(.ChildAdded, withBlock: { snapshot in
+            let image = snapshot.value.objectForKey("image_url") as! String
+            let dName = snapshot.value.objectForKey("display_name") as! String
+            let numBattles = snapshot.value.objectForKey("number_of_battles") as! Int
+            let numWins = snapshot.value.objectForKey("number_of_wins") as! Int
+            completionHandler(User(uid: snapshot.key, imageURL: image, displayName: dName, numberOfBattles: numBattles, numberOfWins: numWins))
+        })
+    }
+    
     static func getUser(uid: String, completionHandler: User -> Void) {
         let ref = self.usersRef.childByAppendingPath(uid)
         ref.observeSingleEventOfType(.Value, withBlock: {
@@ -30,7 +42,6 @@ class FirebaseHelper {
             let dName = snapshot.value.objectForKey("display_name") as! String
             let numBattles = snapshot.value.objectForKey("number_of_battles") as! Int
             let numWins = snapshot.value.objectForKey("number_of_wins") as! Int
-            
             completionHandler(User(uid: uid, imageURL: image, displayName: dName, numberOfBattles: numBattles, numberOfWins: numWins))
         })
     }
