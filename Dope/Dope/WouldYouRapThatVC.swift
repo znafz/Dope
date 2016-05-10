@@ -29,6 +29,7 @@ class WouldYouRapThatVC: UIViewController {
             MatchingService.getImage(user) { image in
                 self.dataSource.append((user, image))
                 self.cards.reloadData()
+                self.displayName.text = self.dataSource[self.cards.currentCardIndex].0.displayName
             }
         }
     }
@@ -48,14 +49,20 @@ extension WouldYouRapThatVC: KolodaViewDelegate {
             }
         }
         let position = cards.currentCardIndex
+        
         cards.insertCardAtIndexRange(position...position, animated: true)
     }
     
     func koloda(koloda: KolodaView, didSwipeCardAtIndex index: UInt, inDirection direction: SwipeResultDirection) {
         /// TODO: Check for match here.
         // If there is a match, open a new rap battle and begin broadcasting!
-        MatchingService.swipeRight(self.dataSource[0].0)
-        performSegueWithIdentifier("rapBattleLiveSegue", sender: self)
+        if(direction == .Right){
+            MatchingService.swipeRight(self.dataSource[0].0)
+            performSegueWithIdentifier("rapBattleLiveSegue", sender: self)
+        } else {
+            self.displayName.text = self.dataSource[cards.currentCardIndex].0.displayName
+        }
+        
     }
 }
 
