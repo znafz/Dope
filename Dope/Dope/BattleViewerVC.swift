@@ -21,11 +21,13 @@ class BattleViewerVC: UIViewController {
     }
     
     @IBAction func nope(sender: UIButton) {
-        
+        battleController.voteNope(battle, choice: Choice.Instigator)
+        battleController.voteDope(battle, choice: Choice.Opponent)
     }
     
     @IBAction func dope(sender: UIButton) {
-        
+        battleController.voteDope(battle, choice: Choice.Instigator)
+        battleController.voteNope(battle, choice: Choice.Opponent)
     }
     
     override func viewDidLoad() {
