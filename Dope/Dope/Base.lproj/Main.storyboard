@@ -17,7 +17,7 @@
         <!--Init View Controller-->
         <scene sceneID="Ria-cn-jJy">
             <objects>
-                <viewController storyboardIdentifier="init" id="qKI-Ra-L45" customClass="InitViewController" customModule="Dope" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="qKI-Ra-L45" customClass="InitViewController" customModule="Dope" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8d2-E6-ogF"/>
                         <viewControllerLayoutGuide type="bottom" id="Dbw-mQ-BPB"/>
@@ -40,7 +40,7 @@
         <!--Navigation Controller-->
         <scene sceneID="Bv4-EC-NHW">
             <objects>
-                <navigationController id="u27-Fe-VyN" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="init" id="u27-Fe-VyN" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="smt-3A-VSS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
