@@ -16,6 +16,16 @@ class InitViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Do any additional setup after loading the view.
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewDidAppear(animated: Bool) {
         FirebaseHelper.checkLoginState({loggedIn in
             if(loggedIn){
                 self.performSegueWithIdentifier("homeSegue", sender: self)
@@ -23,12 +33,6 @@ class InitViewController: UIViewController {
                 self.performSegueWithIdentifier("loginSegue", sender: self)
             }
         })
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
 
