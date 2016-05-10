@@ -17,7 +17,7 @@
         <!--Init View Controller-->
         <scene sceneID="Ria-cn-jJy">
             <objects>
-                <viewController id="qKI-Ra-L45" customClass="InitViewController" customModule="Dope" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="init" id="qKI-Ra-L45" customClass="InitViewController" customModule="Dope" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8d2-E6-ogF"/>
                         <viewControllerLayoutGuide type="bottom" id="Dbw-mQ-BPB"/>
@@ -415,7 +415,7 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="FET-ye-c4W"/>
                                     <barButtonItem title="Quit" width="250" id="tPN-yo-A6N">
                                         <connections>
-                                            <action selector="quit:" destination="0zq-Ng-lCf" id="qZ1-NT-9bv"/>
+                                            <action selector="quit:" destination="0zq-Ng-lCf" id="H1z-vi-SDt"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="QNh-zl-C8Q"/>
@@ -448,9 +448,11 @@
                         <outlet property="rhymingWord" destination="cNi-R1-uDw" id="cqY-To-U3J"/>
                         <outlet property="streamView" destination="duj-xm-xFd" id="UkS-PS-joL"/>
                         <outlet property="word" destination="1W0-BY-Cmv" id="aVo-bt-Eix"/>
+                        <segue destination="0eK-BN-0xs" kind="unwind" identifier="backToHome" unwindAction="unwindToHome:" id="bpl-tH-pXC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZoV-Tk-zcp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="0eK-BN-0xs" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3332" y="-67"/>
         </scene>
@@ -609,6 +611,6 @@
         <image name="wheelchair.png" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="9Mq-5N-EvG"/>
+        <segue reference="TVS-vd-z3e"/>
     </inferredMetricsTieBreakers>
 </document>

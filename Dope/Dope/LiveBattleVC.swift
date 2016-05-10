@@ -71,7 +71,12 @@ class LiveBattleVC: UIViewController {
     }
     
     @IBAction func quit(sender: UIButton) {
-        dismissViewControllerAnimated(true, completion: nil)
+        performSegueWithIdentifier("backToHome", sender: self)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewControllerWithIdentifier("init")
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        appDelegate.window?.rootViewController = vc
+        //dismissViewControllerAnimated(true, completion: nil)
     }
     
 
