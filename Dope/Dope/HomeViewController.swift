@@ -12,10 +12,13 @@ class HomeViewController: UITabBarController {
     
     @IBAction func logout(){
         FirebaseHelper.logout()
+        performSegueWithIdentifier("logout", sender: self)
+        /*
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewControllerWithIdentifier("init")
+        let vc = storyboard.instantiateViewControllerWithIdentifier("login")
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         appDelegate.window?.rootViewController = vc
+         */
 
     }
 
