@@ -3,8 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
-        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -291,36 +289,28 @@
                         <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v1K-Bu-kDa" customClass="KolodaView" customModule="Koloda">
+                                <rect key="frame" x="124" y="20" width="352" height="368"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="v1K-Bu-kDa" secondAttribute="height" multiplier="195:224" constant="31.64285714285711" id="J4D-Nv-LTl"/>
+                                    <constraint firstAttribute="height" constant="368" id="ih9-j6-8Tf"/>
+                                </constraints>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F2b-a7-rNl">
-                                <rect key="frame" x="20" y="433" width="560" height="46"/>
+                                <rect key="frame" x="20" y="396" width="560" height="83"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jGi-kV-AK2">
-                                        <rect key="frame" x="24" y="8" width="153" height="30"/>
+                                        <rect key="frame" x="8" y="27" width="544" height="30"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="353" id="KXg-Ln-KcS"/>
+                                            <constraint firstAttribute="height" constant="30" id="9W6-Ln-2nV"/>
                                         </constraints>
                                         <attributedString key="attributedText">
                                             <fragment content="DISPLAY NAME">
                                                 <attributes>
                                                     <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <font key="NSFont" size="24" name="HelveticaNeue-UltraLight"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                </attributes>
-                                            </fragment>
-                                        </attributedString>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QDb-uI-7Wk">
-                                        <rect key="frame" x="385" y="8" width="151" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="151" id="YA7-0m-fRb"/>
-                                        </constraints>
-                                        <attributedString key="attributedText">
-                                            <fragment content="DOPE : NOPE">
-                                                <attributes>
-                                                    <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <font key="NSFont" size="24" name="HelveticaNeue-UltraLight"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
                                             </fragment>
                                         </attributedString>
@@ -329,20 +319,11 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="jGi-kV-AK2" firstAttribute="top" secondItem="F2b-a7-rNl" secondAttribute="topMargin" id="Dzb-wL-tBQ"/>
-                                    <constraint firstItem="QDb-uI-7Wk" firstAttribute="trailing" secondItem="F2b-a7-rNl" secondAttribute="trailingMargin" constant="-16" id="JHD-AP-NIW"/>
-                                    <constraint firstItem="jGi-kV-AK2" firstAttribute="bottom" secondItem="F2b-a7-rNl" secondAttribute="bottomMargin" id="PbH-qr-AUx"/>
-                                    <constraint firstAttribute="height" constant="46" id="fxH-Rx-XHz"/>
-                                    <constraint firstItem="QDb-uI-7Wk" firstAttribute="firstBaseline" secondItem="jGi-kV-AK2" secondAttribute="firstBaseline" id="mbx-Dd-0mM"/>
-                                    <constraint firstItem="QDb-uI-7Wk" firstAttribute="baseline" secondItem="jGi-kV-AK2" secondAttribute="baseline" id="tY3-JI-G4R"/>
-                                    <constraint firstItem="jGi-kV-AK2" firstAttribute="leading" secondItem="F2b-a7-rNl" secondAttribute="leadingMargin" constant="16" id="uSZ-gf-KQu"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v1K-Bu-kDa" customClass="KolodaView" customModule="Koloda">
-                                <rect key="frame" x="124" y="20" width="352" height="405"/>
-                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="v1K-Bu-kDa" secondAttribute="height" multiplier="195:224" id="J4D-Nv-LTl"/>
+                                    <constraint firstItem="jGi-kV-AK2" firstAttribute="bottom" secondItem="F2b-a7-rNl" secondAttribute="bottomMargin" constant="-18" id="04L-eY-mVU"/>
+                                    <constraint firstItem="jGi-kV-AK2" firstAttribute="trailing" secondItem="F2b-a7-rNl" secondAttribute="trailingMargin" id="MTu-V0-SQY"/>
+                                    <constraint firstItem="jGi-kV-AK2" firstAttribute="top" secondItem="F2b-a7-rNl" secondAttribute="topMargin" constant="19" id="Non-HS-bH1"/>
+                                    <constraint firstItem="jGi-kV-AK2" firstAttribute="leading" secondItem="F2b-a7-rNl" secondAttribute="leadingMargin" id="c1I-np-kTs"/>
+                                    <constraint firstAttribute="height" constant="83" id="fxH-Rx-XHz"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -350,13 +331,12 @@
                         <constraints>
                             <constraint firstItem="F2b-a7-rNl" firstAttribute="leading" secondItem="OyH-TG-xNy" secondAttribute="leadingMargin" id="1Tr-14-jT2"/>
                             <constraint firstItem="v1K-Bu-kDa" firstAttribute="top" secondItem="Hm3-pk-6xK" secondAttribute="bottom" constant="20" id="Gxk-Va-MVi"/>
-                            <constraint firstItem="F2b-a7-rNl" firstAttribute="top" secondItem="v1K-Bu-kDa" secondAttribute="baseline" constant="8" id="Lgq-vD-zQL"/>
                             <constraint firstItem="71o-F6-ciQ" firstAttribute="top" secondItem="F2b-a7-rNl" secondAttribute="bottom" constant="8" id="MGO-53-TT6"/>
-                            <constraint firstItem="F2b-a7-rNl" firstAttribute="top" secondItem="OyH-TG-xNy" secondAttribute="top" constant="433" id="Pzb-HD-juR"/>
                             <constraint firstItem="v1K-Bu-kDa" firstAttribute="centerX" secondItem="OyH-TG-xNy" secondAttribute="centerX" id="ZDU-64-8ap"/>
                             <constraint firstItem="F2b-a7-rNl" firstAttribute="centerX" secondItem="v1K-Bu-kDa" secondAttribute="centerX" id="a6k-qC-tfI"/>
                             <constraint firstItem="F2b-a7-rNl" firstAttribute="trailing" secondItem="OyH-TG-xNy" secondAttribute="trailingMargin" id="coO-by-VMm"/>
                             <constraint firstItem="F2b-a7-rNl" firstAttribute="leading" secondItem="OyH-TG-xNy" secondAttribute="leadingMargin" id="hZW-Gc-fnw"/>
+                            <constraint firstItem="F2b-a7-rNl" firstAttribute="top" secondItem="v1K-Bu-kDa" secondAttribute="bottom" constant="8" id="kzT-CW-FoG"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
@@ -364,7 +344,6 @@
                     <connections>
                         <outlet property="cards" destination="v1K-Bu-kDa" id="fL5-bv-uun"/>
                         <outlet property="displayName" destination="jGi-kV-AK2" id="dII-p9-uFw"/>
-                        <outlet property="ratio" destination="QDb-uI-7Wk" id="s6c-s1-ygu"/>
                         <segue destination="0zq-Ng-lCf" kind="presentation" identifier="rapBattleLiveSegue" id="Y7v-38-qYe"/>
                     </connections>
                 </viewController>

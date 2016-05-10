@@ -19,6 +19,7 @@ class WouldYouRapThatVC: UIViewController {
     
     var dataSource: Array<(User, UIImage)> = []
     
+    
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
@@ -68,6 +69,7 @@ extension WouldYouRapThatVC: KolodaViewDelegate {
 
 
 // MARK: - KolodaViewDataSource
+
 extension WouldYouRapThatVC: KolodaViewDataSource {
     
     func kolodaNumberOfCards(koloda:KolodaView) -> UInt {
