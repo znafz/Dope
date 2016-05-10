@@ -400,18 +400,24 @@
                                 <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="FET-ye-c4W"/>
-                                    <barButtonItem title="Quit" width="250" id="tPN-yo-A6N">
+                                    <barButtonItem title="Quit" width="150" id="tPN-yo-A6N">
                                         <connections>
                                             <action selector="quit:" destination="0zq-Ng-lCf" id="H1z-vi-SDt"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="QNh-zl-C8Q"/>
-                                    <barButtonItem tag="-5" image="wheelchair.png" width="250" style="plain" id="6Mu-A8-leC">
+                                    <barButtonItem tag="-5" image="wheelchair.png" width="150" style="plain" id="6Mu-A8-leC">
                                         <connections>
                                             <action selector="handicap" destination="0zq-Ng-lCf" id="e2S-dq-7E7"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="dA5-RT-RNa"/>
+                                    <barButtonItem title="Switch Rapper" width="150" id="W0D-c7-Z9G">
+                                        <connections>
+                                            <action selector="switchRapper:" destination="0zq-Ng-lCf" id="7oT-Ja-AHf"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="JeR-pI-dnD"/>
                                 </items>
                             </toolbar>
                         </subviews>
@@ -484,7 +490,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J2R-vP-Ngm">
                                 <rect key="frame" x="20" y="28" width="560" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z1U-JT-IlA">
@@ -557,10 +563,10 @@
             </objects>
             <point key="canvasLocation" x="2597" y="611"/>
         </scene>
-        <!--Publish-->
+        <!--Two Way Test-->
         <scene sceneID="2jA-V8-R6O">
             <objects>
-                <viewController id="krD-aq-5Ka" customClass="Publish" customModule="Dope" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="krD-aq-5Ka" customClass="TwoWayTest" customModule="Dope" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mnH-d8-Usl"/>
                         <viewControllerLayoutGuide type="bottom" id="WeV-ec-fUM"/>
@@ -575,10 +581,10 @@
             </objects>
             <point key="canvasLocation" x="4068" y="-67"/>
         </scene>
-        <!--Subscribe-->
+        <!--Two Way Test-->
         <scene sceneID="vqw-v7-pXP">
             <objects>
-                <viewController id="vNx-3r-Boa" customClass="Subscribe" customModule="Dope" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vNx-3r-Boa" customClass="TwoWayTest" customModule="Dope" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="DDC-e1-4J2"/>
                         <viewControllerLayoutGuide type="bottom" id="Ve0-U0-P3E"/>

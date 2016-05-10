@@ -12,9 +12,9 @@ import R5Streaming
 class BaseStream: UIViewController, R5StreamDelegate {
     
     func onR5StreamStatus(stream: R5Stream!, withStatus statusCode: Int32, withMessage msg: String!) {
-        NSLog("Status: %s ", r5_string_for_status(statusCode))
-        let s =  String(format: "Status: %s (%@)",  r5_string_for_status(statusCode), msg)
-        ALToastView.toastInView(self.view, withText:s)
+        //NSLog("Status: %s ", r5_string_for_status(statusCode))
+        //let s =  String(format: "Status: %s (%@)",  r5_string_for_status(statusCode), msg)
+        //ALToastView.toastInView(self.view, withText:s)
     }
     
     var currentView: R5VideoViewController? = nil

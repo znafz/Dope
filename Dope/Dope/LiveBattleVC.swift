@@ -30,7 +30,6 @@ class LiveBattleVC: UIViewController {
         super.viewDidLoad()
         RhymeService.populate(100)
         handicapBar.hidden = true
-        
         word.title = "Word"
         nextPair.title = "Next Pair"
         rhymingWord.title = "Rhyming Word"
@@ -47,6 +46,16 @@ class LiveBattleVC: UIViewController {
     
     
     // MARK: - Action Methods
+    
+    @IBAction func switchRapper(sender: UIBarButtonItem) {
+        
+    }
+    
+    func switchStreams() {
+        let temp = Stream.getParameter("stream2") as! String
+        Stream.setStream2Name(Stream.getParameter("stream1") as! String)
+        Stream.setStream1Name(temp)
+    }
     
     @IBAction func handicap(){
         if(handicapBar.hidden){

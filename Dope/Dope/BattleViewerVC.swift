@@ -30,6 +30,18 @@ class BattleViewerVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        battleController.watchSwitchRapper() { result in
+            let contestant = result
+            if contestant == self.battle.player1 {
+                if contestant.user == CurrentUser.user() {
+                    
+                }
+            } else if contestant == self.battle.player2 {
+                if contestant.user == CurrentUser.user() {
+                    
+                }
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {

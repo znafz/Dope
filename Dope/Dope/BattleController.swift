@@ -15,13 +15,7 @@ class BattleController: NSObject {
     
     private let battlesRef = Firebase(url:"https://popping-inferno-6138.firebaseio.com/battles")
     private var battles: [Battle] = []
-    
-    
-    // MARK: - Lifecycle
-    
-    override init() {
-        super.init()
-    }
+    var currentBattle: Battle?
     
     
     // MARK: - Methods
@@ -141,6 +135,20 @@ class BattleController: NSObject {
             currentData.value = value! - 1
             return FTransactionResult.successWithValue(currentData)
         })
+    }
+    
+    func watchSwitchRapper(completion: Contestant -> Void) {
+        if let battle = currentBattle {
+            let ref = battlesRef.childByAppendingPath(battle.uid)
+            ref.queryOrderedByChild("current_rapper").observeEventType(.ChildChanged, withBlock: { snapshot in
+                let value = snapshot.value as! String
+                if value == "instigator" {
+                    completion(battle.player1)
+                } else if value == "opponent" {
+                    completion(battle.player2)
+                }
+            })
+        }
     }
     
 }

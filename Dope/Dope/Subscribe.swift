@@ -13,6 +13,7 @@ class Subscribe: BaseStream {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        Stream.setDebug(false)
         setupDefaultR5VideoViewController()
     }
     
