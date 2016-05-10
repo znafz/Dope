@@ -21,6 +21,7 @@ class LiveBattleVC: UIViewController {
     
     var currentWord = 0
     var rhyme:Rhyme!
+    var opponent:User!
     
     
     // MARK: - Lifecycle

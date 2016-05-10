@@ -16,12 +16,23 @@ class Notification: NSObject {
         ref.observeSingleEventOfType(.Value, withBlock: {
             snapshot in
             if let pushID = snapshot.value.objectForKey("one_signal_id"){
-                PushServer.sharedInstance.server.postNotification(["contents": ["en": self.message], "include_player_ids": [pushID as! String]])
+                PushServer.sharedInstance.server.postNotification(["contents": ["en": self.message, "noteType":"note"], "include_player_ids": [pushID as! String]])
             }
             
             
         })
         
+    }
+    func pushBattleRequest(){
+        let ref = FirebaseHelper.usersRef.childByAppendingPath(recipientId)
+        ref.observeSingleEventOfType(.Value, withBlock: {
+            snapshot in
+            if let pushID = snapshot.value.objectForKey("one_signal_id"){
+                PushServer.sharedInstance.server.postNotification(["contents": ["en": self.message], "include_player_ids": [pushID as! String], "data":["opponent":self.recipientId, "noteType":"battle"], "buttons":[["id":"accept", "text":"Fight", "icon":""]]])
+            }
+            
+            
+        })
     }
     init(message:String, recipientId:String){
         self.message = message

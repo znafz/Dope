@@ -23,7 +23,36 @@ class AppDelegate: FirebaseAppDelegate {
         _ = MatchingService.sharedMatchingInstance
         MatchingService.startUpdating()
         
-        PushServer.sharedInstance.server = OneSignal(launchOptions: launchOptions, appId: "bd07345d-ef11-4307-b129-d936a6810241", handleNotification: nil)
+        PushServer.sharedInstance.server = OneSignal(launchOptions: launchOptions, appId: "bd07345d-ef11-4307-b129-d936a6810241"){ (message, additionalData, isActive) in
+            NSLog("OneSignal Notification opened:\nMessage: %@", message)
+            
+            if additionalData != nil {
+                NSLog("additionalData: %@", additionalData)
+                // Check for and read any custom values you added to the notification
+                // This done with the "Additonal Data" section the dashbaord.
+                // OR setting the 'data' field on our REST API.
+                if let noteType = additionalData["noteType"] as! String?{
+                    print("notification type: \(noteType)")
+                    if let opponent = additionalData["opponent"] as! String? {
+                        NSLog("opponent: %@", opponent)
+                        if let selectedAction = additionalData["actionSelected"] as! String?{
+                            print("selected action: \(selectedAction)")
+                            if(noteType == "battle" && selectedAction == "accept"){
+                                //If the user accepts the fight, go to the battle screen
+                                FirebaseHelper.getUser(opponent, completionHandler: {user in
+                                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                                    let vc = storyboard.instantiateViewControllerWithIdentifier("rapBattleLive") as! LiveBattleVC
+                                    vc.opponent = user
+                                    self.window?.rootViewController = vc
+                                })
+                                
+                            }
+                        }
+                    }
+                }
+                
+            }
+        }
         PushServer.sharedInstance.server.enableInAppAlertNotification(true)
         return true
     }
